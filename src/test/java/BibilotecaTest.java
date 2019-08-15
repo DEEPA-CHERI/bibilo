@@ -1,13 +1,12 @@
 import com.thoughtworks.pathashala67.Bibiloteca;
+import com.thoughtworks.pathashala67.CatalogOfBooks;
 import com.thoughtworks.pathashala67.ConsoleOutput;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
 import static org.mockito.Mockito.*;
 
 class BibilotecaTest {
     @Test
-    void expectWelcomeMessageToBePrintedWhenUserStartsApplication() {
+    void expectWelcomeMessageToBePrintWhenUserStartsApplication() {
         ConsoleOutput consoleOutput = mock(ConsoleOutput.class);
         Bibiloteca bibiloteca = new Bibiloteca(consoleOutput);
 

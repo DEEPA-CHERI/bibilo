@@ -3,9 +3,9 @@ import com.thoughtworks.pathashala67.ConsoleOutput;
 
 class BibilotecaApp {
     public static void main( String[] args ) {
-        ConsoleOutput consoleOutput = new ConsoleOutput();
-        Bibiloteca bibiloteca = new Bibiloteca( consoleOutput );
+        Bibiloteca bibiloteca = new Bibiloteca();
         bibiloteca.welcome();
+        bibiloteca.run();
     }
 
 }
