@@ -6,4 +6,8 @@ public class ConsoleOutput {
     {
         System.out.println(message);
     }
+
+    public void displayBooks( String booksName ) {
+        System.out.println(booksName);
+    }
 }
