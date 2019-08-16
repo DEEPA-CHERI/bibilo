@@ -34,8 +34,15 @@ public class Bibiloteca {
         while(application_status)
         {
             viewListOfBooks();
+            viewDetailsOfListOfBooks();
             break;
         }
     }
+
+    public void viewDetailsOfListOfBooks() {
+        String booksDetails = books.displayBooksDetails();
+        consoleOutput.displayDetailsOfBooks(booksDetails);
+    }
+
 }
 

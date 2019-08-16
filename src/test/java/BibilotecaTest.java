@@ -29,4 +29,23 @@ class BibilotecaTest {
 
         verify(consoleOutput,times( 1 )).displayBooks(Expected);
     }
+    @Test
+    void shouldDisplayBookNameAuthorNameAndPublishedYearWhenUsersViewsListOfBooks() {
+        ConsoleOutput consoleOutput = mock(ConsoleOutput.class);
+        CatalogOfBooks booksCatalog = new CatalogOfBooks();
+        Bibiloteca bibiloteca = new Bibiloteca(consoleOutput,booksCatalog);
+        String Expected = "****Books****\n" +
+                "Id     Name   Author  PublishedYear\n" +
+                "1  Introduction to Algorithms  Thomas H. Cormen  1975\n"+
+                "2  Learn You a Haskell for Great Good!  Miran Lipovača  1940\n"+
+                "3  Head First Design Patterns  Eric Freeman  1960\n"+
+                "4  Programming Pearls  Jon L. Bentley  1915\n";
+
+        bibiloteca.viewDetailsOfListOfBooks();
+
+        verify(consoleOutput,times( 1 )).displayDetailsOfBooks(Expected);
+    }
+
+
+
 }
