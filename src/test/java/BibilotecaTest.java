@@ -1,6 +1,5 @@
-import com.thoughtworks.pathashala67.Bibiloteca;
-import com.thoughtworks.pathashala67.CatalogOfBooks;
-import com.thoughtworks.pathashala67.ConsoleOutput;
+import com.thoughtworks.pathashala67.Controller.Bibiloteca;
+import com.thoughtworks.pathashala67.View.ConsoleOutput;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
 

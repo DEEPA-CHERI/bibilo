@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67;
+package com.thoughtworks.pathashala67.Model;
 
 class Book {
     private String name;
@@ -11,13 +11,10 @@ class Book {
         this.publishedYear=publishedYear;
     }
 
-    String getBookName() {
-        return name;
-    }
 
     String printBook(int index)
     {
-        return String.format("%s  %s  %s  %s\n",index,name,author,publishedYear);
+        return String.format("%3s|%-35s| %-17s| %-4s|\n",index,name,author,publishedYear);
     }
 
 

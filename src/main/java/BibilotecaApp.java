@@ -1,5 +1,4 @@
-import com.thoughtworks.pathashala67.Bibiloteca;
-import com.thoughtworks.pathashala67.ConsoleOutput;
+import com.thoughtworks.pathashala67.Controller.Bibiloteca;
 
 class BibilotecaApp {
     public static void main( String[] args ) {

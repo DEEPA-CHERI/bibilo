@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67;
+package com.thoughtworks.pathashala67.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,23 +17,10 @@ public class CatalogOfBooks {
         listOfBooks.add( new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) );
     }
 
-    String displayBooksName() {
-        StringBuilder booksNames = new StringBuilder();
-        int book_id = 1;
-        booksNames.append( "****Books****\n" );
-        for (Book book : listOfBooks) {
-            booksNames.append( book_id + " - " + book.getBookName() );
-            booksNames.append( "\n" );
-            book_id++;
-        }
-        return booksNames.toString();
-    }
-
-
     String displayBooksDetails() {
         StringBuilder booksDetails = new StringBuilder();
-        booksDetails.append( "****Books****\n" +
-                "Id     Name   Author  PublishedYear\n" );
+        booksDetails.append( "ListOfBooks\n" );
+        booksDetails.append(String.format("%4s| %-34s| %-17s| %-4s|\n","Id","Name","Author","PublishedYear"));
         int index = 1;
         for (Book book : listOfBooks) {
             booksDetails.append( book.printBook( index++ ) );

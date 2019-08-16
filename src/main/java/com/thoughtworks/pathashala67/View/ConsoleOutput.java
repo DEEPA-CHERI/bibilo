@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67;
+package com.thoughtworks.pathashala67.View;
 
 public class ConsoleOutput {
 

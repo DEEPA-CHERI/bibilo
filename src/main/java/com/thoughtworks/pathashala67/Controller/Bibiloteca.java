@@ -1,12 +1,15 @@
-package com.thoughtworks.pathashala67;
+package com.thoughtworks.pathashala67.Controller;
 
-//
+import com.thoughtworks.pathashala67.Model.CatalogOfBooks;
+import com.thoughtworks.pathashala67.Model.Menu;
+import com.thoughtworks.pathashala67.View.ConsoleOutput;
+
 public class Bibiloteca {
     ConsoleOutput consoleOutput;
     private CatalogOfBooks books;
     boolean application_status;
 
-    public Bibiloteca( ConsoleOutput consoleOutput,CatalogOfBooks books) {
+    public Bibiloteca( ConsoleOutput consoleOutput, CatalogOfBooks books ) {
         this.books = books;
         this.consoleOutput = consoleOutput;
     }
@@ -26,22 +29,16 @@ public class Bibiloteca {
     }
 
     public void viewListOfBooks() {
-        String booksName = books.displayBooksName();
-        consoleOutput.displayBooks(booksName);
+        String booksDetails = books.displayBooksDetails();
+        consoleOutput.displayDetailsOfBooks(booksDetails);
     }
 
     public void run() {
         while(application_status)
         {
             viewListOfBooks();
-            viewDetailsOfListOfBooks();
             break;
         }
-    }
-
-    public void viewDetailsOfListOfBooks() {
-        String booksDetails = books.displayBooksDetails();
-        consoleOutput.displayDetailsOfBooks(booksDetails);
     }
 
 }
