@@ -10,12 +10,13 @@ import static org.mockito.Mockito.*;
 
 class BibilotecaTest {
 
-       private ConsoleIO consoleIO;
-       private Bibiloteca bibiloteca;
+    private ConsoleIO consoleIO;
+    private Bibiloteca bibiloteca;
+
     @BeforeEach
     void beforeEach() {
-        consoleIO = mock(ConsoleIO.class);
-        bibiloteca = new Bibiloteca(consoleIO);
+        consoleIO = mock( ConsoleIO.class );
+        bibiloteca = new Bibiloteca( consoleIO );
     }
 
 
@@ -39,10 +40,11 @@ class BibilotecaTest {
 
     @Test
     void shouldDisplayMenuWhenViewMenuIsCalled() {
-        String expectedMenu ="=========================\n"
+        String expectedMenu = "=========================\n"
                 + "           Menu           \n" +
                 "=========================\n" +
                 "1. List of Books\n"+
+                "2 - Checkout Book\n" +
                 "q. Quit the application\n";
 
         bibiloteca.viewMenuOptions();
@@ -63,12 +65,10 @@ class BibilotecaTest {
 
     @Test
     void expectApplicationToQuitWhenQuitOptionSelected() {
-        when(consoleIO.getInput()).thenReturn("q");
+        when( consoleIO.getInput() ).thenReturn( "q" );
 
-        verifyNoMoreInteractions(consoleIO);
+        verifyNoMoreInteractions( consoleIO );
     }
-
-
 
 
 }

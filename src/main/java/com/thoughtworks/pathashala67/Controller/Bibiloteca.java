@@ -44,20 +44,28 @@ public class Bibiloteca {
         String menu = "=========================\n"
                 + "           Menu           \n" +
                 "=========================\n" +
-                "1. List of Books\n";
+                "1. List of Books\n" +
+                "2 - Checkout Book\n" +
+                "q. Quit the application\n";
+
         consoleIo.printToConsole( menu );
     }
 
     public void selectMenuOptionWithChoice( String choice ) {
         String errorMessage = "=====================\n" +
-                              "Select a valid option!\n" +
-                               "=====================";
-            switch(choice)
-            {
-                case "1":       viewListOfBooks();
-                                break;
-                default:        consoleIo.printToConsole( errorMessage );
+                "Select a valid option!\n" +
+                "=====================";
+        switch (choice) {
+            case "1":
+                viewListOfBooks();
+                break;
+            case "q": {
+                application_status = false;
+                return;
             }
+            default:
+                consoleIo.printToConsole( errorMessage );
+        }
 
     }
 }
