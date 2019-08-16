@@ -1,16 +1,12 @@
 package com.thoughtworks.pathashala67.Controller;
-
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class Bibiloteca {
     ConsoleIO consoleIo;
     private Library books;
     boolean application_status = true;
-    List<String> menuOptions = Arrays.asList( "1" );
+
 
     public Bibiloteca( ConsoleIO consoleIo ) {
         this.consoleIo = consoleIo;
@@ -21,7 +17,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
     }
 
-    public void viewListOfBooks() {
+    private void viewListOfBooks() {
         books.displayBookListDetails();
     }
 

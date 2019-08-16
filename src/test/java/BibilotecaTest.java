@@ -43,7 +43,7 @@ class BibilotecaTest {
         String expectedMenu = "=========================\n"
                 + "           Menu           \n" +
                 "=========================\n" +
-                "1. List of Books\n"+
+                "1. List of Books\n" +
                 "2 - Checkout Book\n" +
                 "q. Quit the application\n";
 
