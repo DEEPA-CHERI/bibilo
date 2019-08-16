@@ -11,10 +11,10 @@ public class Book {
         this.publishedYear = publishedYear;
     }
 
-    String getBookName()
-    {
+    String getBookName() {
         return name;
     }
+
     public void printDetails( int index ) {
         System.out.println( String.format( "|%-5s| %-25s| %-25s| %-15s|%n", index, name, author, publishedYear ) );
     }

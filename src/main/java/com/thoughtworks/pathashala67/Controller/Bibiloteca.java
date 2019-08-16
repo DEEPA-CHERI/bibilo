@@ -1,11 +1,12 @@
 package com.thoughtworks.pathashala67.Controller;
+
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 public class Bibiloteca {
-    ConsoleIO consoleIo;
+   private ConsoleIO consoleIo;
     private Library books;
-    boolean application_status = true;
+    private boolean application_status = true;
 
 
     public Bibiloteca( ConsoleIO consoleIo ) {
@@ -56,16 +57,16 @@ public class Bibiloteca {
                 viewListOfBooks();
                 break;
             case "2": {
-                         String bookNumber = "Enter the book number ";
-                         consoleIo.printToConsole( bookNumber );
-                         String bookName= consoleIo.getInput();
-                         books.checkout( bookName );
-                         break;
-                     }
+                String bookNumber = "Enter the book name ";
+                consoleIo.printToConsole( bookNumber );
+                String bookName = consoleIo.getBookName();
+                books.checkout( bookName );
+                break;
+            }
             case "q": {
                 application_status = false;
                 return;
-                }
+            }
             default:
                 consoleIo.printToConsole( errorMessage );
         }

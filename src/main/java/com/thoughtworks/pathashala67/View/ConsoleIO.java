@@ -28,4 +28,8 @@ public class ConsoleIO {
             index++;
         }
     }
+
+    public String getBookName() {
+        return scanner.nextLine();
+    }
 }

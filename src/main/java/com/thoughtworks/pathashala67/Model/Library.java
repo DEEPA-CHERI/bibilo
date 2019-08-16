@@ -50,7 +50,7 @@ public class Library {
     }
 
     private int searchForBook( String bookName ) {
-        int index = 1, searchStatus = -1;
+        int index = 0, searchStatus = -1;
         for (Book book : listOfBooks) {
             if (book.getBookName().equals( bookName )) {
                 searchStatus = index;
