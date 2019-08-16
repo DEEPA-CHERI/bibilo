@@ -1,6 +1,8 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
+import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.Test;
+
 import static org.mockito.Mockito.*;
 
 class BibilotecaTest {
@@ -43,4 +45,19 @@ class BibilotecaTest {
 
         verify( consoleOutput,times(1)).printToConsole(expectedMenu);
     }
+
+    @Test
+    void expectInvalidMessageWhenInvalidInputGiven(){
+        ConsoleIO consoleOutput = mock( ConsoleIO.class);
+        Bibiloteca bibiloteca = new Bibiloteca(consoleOutput);
+        String expectedMessage = "=====================\n" +
+                                  "Select a valid option!\n" +
+                                  "=====================";
+
+        bibiloteca.selectMenuOptionWithChoice("XYZ");
+
+        verify( consoleOutput,times(1)).printToConsole(expectedMessage);
+    }
+
+
 }

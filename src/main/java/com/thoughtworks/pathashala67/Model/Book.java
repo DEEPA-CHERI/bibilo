@@ -1,6 +1,6 @@
 package com.thoughtworks.pathashala67.Model;
 
-class Book {
+public class Book {
     private String name;
     private String author;
     private int publishedYear;
@@ -11,11 +11,8 @@ class Book {
         this.publishedYear=publishedYear;
     }
 
-
-    String printBook(int index)
-    {
-        return String.format("%3s|%-35s| %-17s| %-4s|\n",index,name,author,publishedYear);
+    public void printDetails(int index) {
+        System.out.println(String.format("|%-5s| %-25s| %-25s| %-15s|%n", index, name, author, publishedYear));
     }
-
 
 }

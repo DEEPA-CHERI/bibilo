@@ -1,13 +1,16 @@
 package com.thoughtworks.pathashala67.Model;
 
+import com.thoughtworks.pathashala67.View.ConsoleIO;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class Library  {
     private List<Book> listOfBooks = new ArrayList<>();
-
-    public Library() {
+    private ConsoleIO consoleIO;
+    public Library(ConsoleIO consoleIO) {
         loadBooks();
+        this.consoleIO = consoleIO;
     }
 
     private void loadBooks() {
@@ -28,14 +31,8 @@ public class Library {
         listOfBooks.add(new Book("Short History of the World, A", "Wells, H G", 1877));
     }
 
-//    public String displayBooksDetails() {
-//        StringBuilder booksDetails = new StringBuilder();
-//        booksDetails.append( "ListOfBooks\n" );
-//        booksDetails.append(String.format("%4s| %-34s| %-17s| %-4s|\n","Id","Name","Author","PublishedYear"));
-//        int index = 1;
-//        for (Book book : listOfBooks) {
-//            booksDetails.append( book.printBook( index++ ) );
-//        }
-//        return booksDetails.toString();
-//    }
+    public void displayBookListDetails() {
+        ConsoleIO consoleIO = new ConsoleIO();
+        consoleIO.printBookList( listOfBooks );
+    }
 }
