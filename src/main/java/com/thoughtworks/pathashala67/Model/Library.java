@@ -42,6 +42,7 @@ public class Library {
         int bookIndex = searchForBook( bookName );
         checkedOutList.add( listOfBooks.get( bookIndex ) );
         listOfBooks.remove( bookIndex );
+        consoleIO.printToConsole("Thank you! Enjoy the book");
     }
 
     private int searchForBook( String bookName ) {
