@@ -1,4 +1,5 @@
 package com.thoughtworks.pathashala67.View;
+
 import com.thoughtworks.pathashala67.Model.Book;
 
 import java.util.List;
@@ -13,8 +14,7 @@ public class ConsoleIO {
     }
 
     public String getInput() {
-        String input = scanner.nextLine();
-        return input;
+        return scanner.nextLine().toLowerCase();
     }
 
 

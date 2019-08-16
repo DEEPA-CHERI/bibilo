@@ -14,7 +14,7 @@ public class Bibiloteca {
 
     public Bibiloteca( ConsoleIO consoleIo ) {
         this.consoleIo = consoleIo;
-        this.books = new Library(consoleIo);
+        this.books = new Library( consoleIo );
     }
 
     public void welcome() {
@@ -22,9 +22,8 @@ public class Bibiloteca {
     }
 
     public void viewListOfBooks() {
-       books.displayBookListDetails();
-   }
-
+        books.displayBookListDetails();
+    }
 
     public void run() {
         String choice;
@@ -33,7 +32,6 @@ public class Bibiloteca {
             selectChoice();
             choice = consoleIo.getInput();
             selectMenuOptionWithChoice( choice );
-            break;
         }
     }
 
