@@ -1,10 +1,7 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.PrintStream;
 
 import static org.mockito.Mockito.*;
 

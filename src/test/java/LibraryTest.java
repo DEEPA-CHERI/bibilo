@@ -29,4 +29,14 @@ class LibraryTest {
         assertEquals(1,books.checkedOutList.size());
         verify(consoleIO).printToConsole(expected);
     }
+    @Test
+    void expectUnSuccessMessageWhenCheckoutIsUnSuccessful() {
+        ConsoleIO consoleIO = mock(ConsoleIO.class);
+        Library books =  new Library(consoleIO);
+        String expected = "Sorry, that book is not available";
+
+        books.checkout("Introduction to Algo");
+
+        verify(consoleIO).printToConsole(expected);
+    }
 }

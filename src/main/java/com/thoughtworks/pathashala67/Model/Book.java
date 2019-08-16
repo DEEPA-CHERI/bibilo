@@ -1,7 +1,7 @@
 package com.thoughtworks.pathashala67.Model;
 
 public class Book {
-    public String name;
+    private String name;
     private String author;
     private int publishedYear;
 
@@ -11,6 +11,10 @@ public class Book {
         this.publishedYear = publishedYear;
     }
 
+    String getBookName()
+    {
+        return name;
+    }
     public void printDetails( int index ) {
         System.out.println( String.format( "|%-5s| %-25s| %-25s| %-15s|%n", index, name, author, publishedYear ) );
     }

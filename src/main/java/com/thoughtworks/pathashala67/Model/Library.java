@@ -40,19 +40,24 @@ public class Library {
 
     public void checkout( String bookName ) {
         int bookIndex = searchForBook( bookName );
-        checkedOutList.add( listOfBooks.get( bookIndex ) );
-        listOfBooks.remove( bookIndex );
-        consoleIO.printToConsole("Thank you! Enjoy the book");
+        if (bookIndex == -1) {
+            consoleIO.printToConsole( "Sorry, that book is not available" );
+        } else {
+            checkedOutList.add( listOfBooks.get( bookIndex ) );
+            listOfBooks.remove( bookIndex );
+            consoleIO.printToConsole( "Thank you! Enjoy the book" );
+        }
     }
 
     private int searchForBook( String bookName ) {
-        int index = 1;
+        int index = 1, searchStatus = -1;
         for (Book book : listOfBooks) {
-            if (book.name.equals( bookName )) {
+            if (book.getBookName().equals( bookName )) {
+                searchStatus = index;
                 break;
             }
             index++;
         }
-        return index;
+        return searchStatus;
     }
 }
