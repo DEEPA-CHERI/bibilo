@@ -1,8 +1,8 @@
 package com.thoughtworks.pathashala67.View;
 
-public class ConsoleOutput {
+public class ConsoleIO {
 
-    public void display( String message ) {
+    public void printToConsole( String message ) {
         System.out.println( message );
     }
 

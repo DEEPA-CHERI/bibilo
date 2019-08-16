@@ -1,45 +1,52 @@
 package com.thoughtworks.pathashala67.Controller;
 
-import com.thoughtworks.pathashala67.Model.CatalogOfBooks;
-import com.thoughtworks.pathashala67.Model.Menu;
-import com.thoughtworks.pathashala67.View.ConsoleOutput;
+import com.thoughtworks.pathashala67.Model.Library;
+import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 public class Bibiloteca {
-    ConsoleOutput consoleOutput;
-    private CatalogOfBooks books;
+    ConsoleIO consoleIo;
+    private Library books;
     boolean application_status;
 
-    public Bibiloteca( ConsoleOutput consoleOutput, CatalogOfBooks books ) {
+    public Bibiloteca( ConsoleIO consoleIo, Library books ) {
         this.books = books;
-        this.consoleOutput = consoleOutput;
+        this.consoleIo = consoleIo;
+        application_status = true;
     }
 
-    public Bibiloteca( ConsoleOutput consoleOutput ) {
-        this.consoleOutput = consoleOutput;
+    public Bibiloteca( ConsoleIO consoleIo ) {
+        this.consoleIo = consoleIo;
+        application_status = true;
     }
 
     public Bibiloteca() {
         application_status = true;
-        this.consoleOutput = new ConsoleOutput();
-        this.books = new CatalogOfBooks();
+        this.consoleIo = new ConsoleIO();
+        this.books = new Library();
     }
 
     public void welcome() {
-        consoleOutput.display( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
+        consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
     }
 
-    public void viewListOfBooks() {
-        String booksDetails = books.displayBooksDetails();
-        consoleOutput.displayDetailsOfBooks(booksDetails);
-    }
+//    private void viewListOfBooks() {
+//        String booksDetails = books.displayBooksDetails();
+//        consoleOutput.displayDetailsOfBooks( booksDetails );
+//    }
+
 
     public void run() {
-        while(application_status)
-        {
-            viewListOfBooks();
+        while (application_status) {
+           // viewListOfBooks();
+              viewMenu();
             break;
         }
     }
 
+    public void viewMenu() {
+        Menu menu = new Menu();
+        String getMenu = menu.displayMenu();
+        consoleOutput.display( getMenu);
+    }
 }
 
