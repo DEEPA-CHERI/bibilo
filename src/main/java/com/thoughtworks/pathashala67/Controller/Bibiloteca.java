@@ -58,8 +58,8 @@ public class Bibiloteca {
             case "2": {
                          String bookNumber = "Enter the book number ";
                          consoleIo.printToConsole( bookNumber );
-                         int index = Integer.parseInt(consoleIo.getInput());
-                         books.checkout( index );
+                         String bookName= consoleIo.getInput();
+                         books.checkout( bookName );
                          break;
                      }
             case "q": {

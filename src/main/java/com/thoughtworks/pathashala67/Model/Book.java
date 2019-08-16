@@ -1,7 +1,7 @@
 package com.thoughtworks.pathashala67.Model;
 
 public class Book {
-    private String name;
+    public String name;
     private String author;
     private int publishedYear;
 

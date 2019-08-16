@@ -3,6 +3,7 @@ import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 
 class LibraryTest {
     @Test

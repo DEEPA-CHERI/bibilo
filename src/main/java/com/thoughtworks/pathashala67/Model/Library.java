@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Library {
     public List<Book> listOfBooks = new ArrayList<>();
-    public List<Book> checkedOutList=new ArrayList<>(  );
+    public List<Book> checkedOutList = new ArrayList<>();
     private ConsoleIO consoleIO;
 
     public Library( ConsoleIO consoleIO ) {
@@ -38,8 +38,20 @@ public class Library {
         consoleIO.printBookList( listOfBooks );
     }
 
-    public void checkout( int bookIndex ) {
-        checkedOutList.add(listOfBooks.get(bookIndex));
+    public void checkout( String bookName ) {
+        int bookIndex = searchForBook( bookName );
+        checkedOutList.add( listOfBooks.get( bookIndex ) );
         listOfBooks.remove( bookIndex );
+    }
+
+    private int searchForBook( String bookName ) {
+        int index = 1;
+        for (Book book : listOfBooks) {
+            if (book.name.equals( bookName )) {
+                break;
+            }
+            index++;
+        }
+        return index;
     }
 }
