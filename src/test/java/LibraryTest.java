@@ -8,7 +8,7 @@ import static org.mockito.Mockito.verify;
 
 class LibraryTest {
     @Test
-    void expectUserShouldAbleToCheckoutBook() {
+    void ShouldAbleToCheckoutBook() {
         ConsoleIO consoleIO = new ConsoleIO();
         Library books =  new Library(consoleIO);
 
@@ -18,7 +18,7 @@ class LibraryTest {
         assertEquals(1,books.checkedOutList.size());
     }
     @Test
-    void expectSuccessMessageWhenCheckoutIsSuccessful() {
+    void expectSuccessfulMessageWhenCheckoutIsSuccess() {
         ConsoleIO consoleIO = mock(ConsoleIO.class);
         Library books =  new Library(consoleIO);
         String expected = "Thank you! Enjoy the book";
@@ -30,7 +30,7 @@ class LibraryTest {
         verify(consoleIO).printToConsole(expected);
     }
     @Test
-    void expectUnSuccessMessageWhenCheckoutIsUnSuccessful() {
+    void expectUnSuccessfulMessageWhenCheckoutIsUnSuccess() {
         ConsoleIO consoleIO = mock(ConsoleIO.class);
         Library books =  new Library(consoleIO);
         String expected = "Sorry, that book is not available";
