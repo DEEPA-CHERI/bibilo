@@ -37,16 +37,18 @@ public class Bibiloteca {
 
     public void run() {
         while (application_status) {
-           // viewListOfBooks();
-              viewMenu();
+            // viewListOfBooks();
+            viewMenuOptions();
             break;
         }
     }
 
-    public void viewMenu() {
-        Menu menu = new Menu();
-        String getMenu = menu.displayMenu();
-        consoleOutput.display( getMenu);
+    public void viewMenuOptions() {
+        String menu = "=========================\n"
+                      + "           Menu           \n" +
+                      "=========================\n" +
+                "1. List of Books\n";
+        consoleIo.printToConsole( menu );
     }
 }
 
