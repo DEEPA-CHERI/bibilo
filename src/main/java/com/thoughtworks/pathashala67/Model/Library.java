@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private List<Book> listOfBooks = new ArrayList<>();
+    public List<Book> listOfBooks = new ArrayList<>();
+    public List<Book> checkedOutList=new ArrayList<>(  );
     private ConsoleIO consoleIO;
 
     public Library( ConsoleIO consoleIO ) {
@@ -35,5 +36,10 @@ public class Library {
     public void displayBookListDetails() {
         ConsoleIO consoleIO = new ConsoleIO();
         consoleIO.printBookList( listOfBooks );
+    }
+
+    public void checkout( int bookIndex ) {
+        checkedOutList.add(listOfBooks.get(bookIndex));
+        listOfBooks.remove( bookIndex );
     }
 }

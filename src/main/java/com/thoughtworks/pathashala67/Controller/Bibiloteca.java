@@ -55,10 +55,17 @@ public class Bibiloteca {
             case "1":
                 viewListOfBooks();
                 break;
+            case "2": {
+                         String bookNumber = "Enter the book number ";
+                         consoleIo.printToConsole( bookNumber );
+                         int index = Integer.parseInt(consoleIo.getInput());
+                         books.checkout( index );
+                         break;
+                     }
             case "q": {
                 application_status = false;
                 return;
-            }
+                }
             default:
                 consoleIo.printToConsole( errorMessage );
         }
