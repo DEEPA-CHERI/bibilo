@@ -1,5 +1,6 @@
 package com.thoughtworks.pathashala67.Model;
 
+import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 import java.util.ArrayList;
@@ -42,14 +43,14 @@ public class Library {
         int bookIndex = searchForBook( bookName );
         if (bookIndex == -1) {
             consoleIO.printToConsole( "Sorry, that book is not available" );
-        } else {
+        }
             checkedOutList.add( listOfBooks.get( bookIndex ) );
             listOfBooks.remove( bookIndex );
             consoleIO.printToConsole( "Thank you! Enjoy the book" );
-        }
+
     }
 
-    private int searchForBook( String bookName ) {
+    public int searchForBook( String bookName ) {
         int index = 0, searchStatus = -1;
         for (Book book : listOfBooks) {
             if (book.getBookName().equals( bookName )) {

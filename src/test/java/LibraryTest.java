@@ -39,4 +39,16 @@ class LibraryTest {
 
         verify(consoleIO).printToConsole(expected);
     }
+
+    @Test
+    void expectBookIndexWhenBookIsInLibrary()
+    {
+        ConsoleIO consoleIO = mock(ConsoleIO.class);
+        Library books =  new Library(consoleIO);
+
+        int bookIndex = books.searchForBook("Pillars of the Earth, The");
+
+        assertEquals( 9,bookIndex );
+    }
+
 }
