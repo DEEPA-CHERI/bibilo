@@ -1,7 +1,10 @@
 package com.thoughtworks.pathashala67.Controller;
 
+import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
+
+import java.util.List;
 
 public class Bibiloteca {
     private ConsoleIO consoleIo;
@@ -9,16 +12,16 @@ public class Bibiloteca {
     private boolean application_status = true;
 
 
-    public Bibiloteca( ConsoleIO consoleIo ) {
+    public Bibiloteca( ConsoleIO consoleIo, List<Book> books ) {
         this.consoleIo = consoleIo;
-        this.books = new Library( consoleIo );
+        this.books = new Library( books );
     }
 
     public void welcome() {
         consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
     }
 
-    public void viewListOfBooks() {
+    private void viewListOfBooks() {
         books.displayBookListDetails();
     }
 

@@ -1,7 +1,10 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
+import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -9,11 +12,12 @@ class BibilotecaTest {
 
     private ConsoleIO consoleIO;
     private Bibiloteca bibiloteca;
+    private List<Book> books;
 
     @BeforeEach
     void beforeEach() {
         consoleIO = mock( ConsoleIO.class );
-        bibiloteca = new Bibiloteca( consoleIO );
+        bibiloteca = new Bibiloteca( consoleIO, books );
     }
 
 
