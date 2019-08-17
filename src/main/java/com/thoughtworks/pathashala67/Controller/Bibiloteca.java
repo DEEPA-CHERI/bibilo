@@ -18,7 +18,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
     }
 
-    private void viewListOfBooks() {
+    public void viewListOfBooks() {
         books.displayBookListDetails();
     }
 

@@ -19,7 +19,7 @@ public class ConsoleIO {
 
 
     public void printBookList( List<Book> listOfBooks ) {
-        String titleTemplate = "|%-5s| %-25s| %-25s| %-15s|%n";
+        String titleTemplate = "|%-5s| %-50s| %-25s| %-15s|%n";
         System.out.println( "********************Book List********************" );
         System.out.printf( titleTemplate, "Id", "Name", "Author", "Year Published" );
         int index = 1;
