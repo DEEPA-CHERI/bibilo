@@ -1,54 +1,64 @@
+import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.*;
 
 class LibraryTest {
-    @Test
-    void ShouldAbleToCheckoutBook() {
-        ConsoleIO consoleIO = new ConsoleIO();
-        Library books =  new Library(consoleIO);
 
-        books.checkout("Introduction to Algorithms");
+    private Library library;
 
-        assertEquals(14,books.listOfBooks.size());
-        assertEquals(1,books.checkedOutList.size());
+    @BeforeEach
+    void setUp() {
+        List<Book> books = new ArrayList<>( Arrays.asList( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ),
+                new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ),
+                new Book( "Head First Design Patterns", "Eric Freeman", 1960 ),
+                new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) ) );
+        library = new Library( books );
     }
+
     @Test
-    void expectSuccessfulMessageWhenCheckoutIsSuccess() {
-        ConsoleIO consoleIO = mock(ConsoleIO.class);
-        Library books =  new Library(consoleIO);
+    void expectBookIndexWhenBookIsInLibrary() throws BookNotAvailableException {
+        int bookIndex = library.searchForBook( "Programming Pearls", library.books );
+
+        assertEquals( 3, bookIndex );
+    }
+
+    @Test
+    void expectUserAbleToCheckoutBook() throws BookNotAvailableException {
+        library.checkout( "Introduction to Algorithms" );
+
+        assertEquals( 3, library.books.size() );
+        assertEquals( 1, library.checkedOutBooks.size() );
+    }
+
+    @Test
+    void expectSuccessMessageWhenCheckoutIsSuccessful() throws BookNotAvailableException {
         String expected = "Thank you! Enjoy the book";
 
-        books.checkout("Introduction to Algorithms");
+        String actual = library.checkout( "Learn You a Haskell for Great Good!" );
 
-        assertEquals(14,books.listOfBooks.size());
-        assertEquals(1,books.checkedOutList.size());
-        verify(consoleIO).printToConsole(expected);
+        assertEquals( 3, library.books.size() );
+        assertEquals( 1, library.checkedOutBooks.size() );
+        assertEquals( expected,actual);
     }
+
     @Test
-    void expectUnSuccessfulMessageWhenCheckoutIsUnSuccess() {
-        ConsoleIO consoleIO = mock(ConsoleIO.class);
-        Library books =  new Library(consoleIO);
+    void expectExceptionWhenCheckoutIsUnSuccessful() throws BookNotAvailableException {
         String expected = "Sorry, that book is not available";
+        library.checkout("Learn You a Haskell for Great Good!"  );
 
-        books.checkout("Introduction to Algo");
-
-        verify(consoleIO).printToConsole(expected);
+        assertThrows( BookNotAvailableException.class, ()->library.checkout("Learn You a Haskell for Great Good!"));
     }
 
-    @Test
-    void expectBookIndexWhenBookIsInLibrary()
-    {
-        ConsoleIO consoleIO = mock(ConsoleIO.class);
-        Library books =  new Library(consoleIO);
 
-        int bookIndex = books.searchForBook("Pillars of the Earth, The");
-
-        assertEquals( 9,bookIndex );
-    }
 
 }

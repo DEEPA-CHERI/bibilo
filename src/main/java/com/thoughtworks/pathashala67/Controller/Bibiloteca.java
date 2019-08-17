@@ -1,5 +1,6 @@
 package com.thoughtworks.pathashala67.Controller;
 
+import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
@@ -8,13 +9,13 @@ import java.util.List;
 
 public class Bibiloteca {
     private ConsoleIO consoleIo;
-    private Library books;
+    private Library library;
     private boolean application_status = true;
 
 
     public Bibiloteca( ConsoleIO consoleIo, List<Book> books ) {
         this.consoleIo = consoleIo;
-        this.books = new Library( books );
+        this.library = new Library( books );
     }
 
     public void welcome() {
@@ -22,7 +23,8 @@ public class Bibiloteca {
     }
 
     private void viewListOfBooks() {
-        books.displayBookListDetails();
+        List<Book> books = library.displayBookListDetails();
+        consoleIo.printBookList( books );
     }
 
     public void run() {
@@ -63,7 +65,11 @@ public class Bibiloteca {
                 String bookNumber = "Enter the book name ";
                 consoleIo.printToConsole( bookNumber );
                 String bookName = consoleIo.getBookName();
-                books.checkout( bookName );
+                try {
+                    consoleIo.printToConsole( library.checkout( bookName ) );
+                } catch (BookNotAvailableException exception) {
+                    consoleIo.printToConsole( exception.getMessage());
+                }
                 break;
             }
             case "q": {
