@@ -65,7 +65,7 @@ public class Bibiloteca {
                 viewListOfBooks();
                 break;
             case "2": {
-                checkOutBook();
+                bookCheckOut();
                 break;
             }
             case "3": {
@@ -80,6 +80,13 @@ public class Bibiloteca {
                 consoleIo.printToConsole( errorMessage );
         }
 
+    }
+
+    private void bookCheckOut() {
+        String bookName = enterBookName();
+        Checkout checkout = new Checkout();
+        String statusMessage = checkout.performAction( library, bookName );
+        consoleIo.printToConsole( statusMessage );
     }
 
     private void returnBook() {
