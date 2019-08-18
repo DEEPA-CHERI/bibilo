@@ -31,17 +31,9 @@ class LibraryTest {
 
     @Test
     void expectBookIndexWhenBookIsInLibrary() throws BookNotAvailableException {
-        int bookIndex = library.searchForBook( "Programming Pearls", library.books );
+        Book book = library.searchForBook( "Programming Pearls", books );
 
-        assertEquals( 3, bookIndex );
-    }
-
-    @Test
-    void expectUserAbleToCheckoutBook() throws BookNotAvailableException {
-        library.checkout( "Introduction to Algorithms" );
-
-        assertEquals( 3, library.books.size() );
-        assertEquals( 1, library.checkedOutBooks.size() );
+        assertEquals( books.get( 3 ), book );
     }
 
     @Test
@@ -50,8 +42,6 @@ class LibraryTest {
 
         String actual = library.checkout( "Learn You a Haskell for Great Good!" );
 
-        assertEquals( 3, library.books.size() );
-        assertEquals( 1, library.checkedOutBooks.size() );
         assertEquals( expected, actual );
     }
 
@@ -65,11 +55,11 @@ class LibraryTest {
     @Test
     void expectUserAbleToReturnBook() throws BookNotAvailableException, InvalidBookException {
         library.checkout( "Learn You a Haskell for Great Good!" );
+        String expected = "Thank you for returning the book";
 
-        library.returnBook( "Learn You a Haskell for Great Good!" );
+        String actual = library.returnBook( "Learn You a Haskell for Great Good!" );
 
-        assertEquals( 4, library.books.size() );
-        assertEquals( 0, library.checkedOutBooks.size() );
+        assertEquals( expected, actual );
     }
 
     @Test

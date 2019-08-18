@@ -20,32 +20,30 @@ public class Library {
     }
 
     public String checkout( String bookName ) throws BookNotAvailableException {
-        int bookIndex = searchForBook( bookName, books );
-        if (bookIndex == -1)
-            throw new BookNotAvailableException( "Sorry, that book is not available" );
-        checkedOutBooks.add( books.get( bookIndex ) );
-        books.remove( bookIndex );
+        Book book = searchForBook( bookName, books );
+        checkedOutBooks.add( book );
+        books.remove( book );
         return ("Thank you! Enjoy the book");
     }
 
-    public int searchForBook( String bookName, List<Book> books ) {
-        int index = 0, searchStatus = -1;
+    public Book searchForBook( String bookName, List<Book> books ) throws BookNotAvailableException {
         for (Book book : books) {
             if (book.equals( new Book( bookName ) )) {
-                searchStatus = index;
-                break;
+                return book;
             }
-            index++;
         }
-        return searchStatus;
+        throw new BookNotAvailableException( "Sorry, that book is not available" );
     }
 
     public String returnBook( String bookName ) throws InvalidBookException {
-        int bookIndex = searchForBook( bookName, checkedOutBooks );
-        if (bookIndex == -1)
+        Book book;
+        try {
+            book = searchForBook( bookName, checkedOutBooks );
+        } catch (BookNotAvailableException exception) {
             throw new InvalidBookException( "That is not a valid book to return." );
-        books.add( checkedOutBooks.get( bookIndex ) );
-        checkedOutBooks.remove( bookIndex );
+        }
+        books.add( book );
+        checkedOutBooks.remove( book );
         return ("Thank you for returning the book");
     }
 }

@@ -25,19 +25,8 @@ class BibilotecaTest {
     void expectWelcomeMessageToBePrintWhenUserStartsApplication() {
         bibiloteca.welcome();
 
-        verify( consoleIO, times( 1 ) ).printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
+        verify( consoleIO, times( 1 ) ).printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great books in Bangalore!" );
     }
-//    @Test
-//    void shouldDisplayBookNameAuthorNameAndPublishedYearWhenUsersViewsListOfBooks() {
-//        ConsoleIO consoleIO = mock(ConsoleIO.class);
-//        Bibiloteca bibiloteca = new Bibiloteca(consoleIO);
-//        String Expected =
-//
-//        bibiloteca.viewListOfBooks();
-//
-//        verify(consoleIO,times( 1 )).display(Expected);
-//    }
-
 
     @Test
     void shouldDisplayMenuWhenViewMenuIsCalled() {
