@@ -64,8 +64,7 @@ public class Bibiloteca {
                 viewListOfBooks();
                 break;
             case "2": {
-                String name = "Enter the book name ";
-                consoleIo.printToConsole( name );
+                promptToEnterBookName();
                 String bookName = consoleIo.getBookName();
                 try {
                     consoleIo.printToConsole( library.checkout( bookName ) );
@@ -75,8 +74,7 @@ public class Bibiloteca {
                 break;
             }
             case "3": {
-                String name = "Enter the book name ";
-                consoleIo.printToConsole( name );
+                promptToEnterBookName();
                 String bookName = consoleIo.getBookName();
                 try {
                     consoleIo.printToConsole( library.returnBook( bookName ) );
@@ -93,6 +91,11 @@ public class Bibiloteca {
                 consoleIo.printToConsole( errorMessage );
         }
 
+    }
+
+    private void promptToEnterBookName() {
+        String name = "Enter the book name ";
+        consoleIo.printToConsole( name );
     }
 }
 
