@@ -29,6 +29,7 @@ public class Bibiloteca {
     }
 
     public void run() throws BookNotAvailableException {
+        welcome();
         String choice;
         while (application_status) {
             viewMenuOptions();
@@ -64,23 +65,11 @@ public class Bibiloteca {
                 viewListOfBooks();
                 break;
             case "2": {
-                promptToEnterBookName();
-                String bookName = consoleIo.getBookName();
-                try {
-                    consoleIo.printToConsole( library.checkout( bookName ) );
-                } catch (BookNotAvailableException exception) {
-                    consoleIo.printToConsole( exception.getMessage() );
-                }
+                checkOutBook();
                 break;
             }
             case "3": {
-                promptToEnterBookName();
-                String bookName = consoleIo.getBookName();
-                try {
-                    consoleIo.printToConsole( library.returnBook( bookName ) );
-                } catch (InvalidBookException exception) {
-                    consoleIo.printToConsole( exception.getMessage() );
-                }
+                returnBook();
                 break;
             }
             case "q": {
@@ -93,7 +82,27 @@ public class Bibiloteca {
 
     }
 
-    private void promptToEnterBookName() {
+    private void returnBook() {
+        enterBookName();
+        String bookName = consoleIo.getBookName();
+        try {
+            consoleIo.printToConsole( library.returnBook( bookName ) );
+        } catch (InvalidBookException exception) {
+            consoleIo.printToConsole( exception.getMessage() );
+        }
+    }
+
+    private void checkOutBook() {
+        enterBookName();
+        String bookName = consoleIo.getBookName();
+        try {
+            consoleIo.printToConsole( library.checkout( bookName ) );
+        } catch (BookNotAvailableException exception) {
+            consoleIo.printToConsole( exception.getMessage() );
+        }
+    }
+
+    private void enterBookName() {
         String name = "Enter the book name ";
         consoleIo.printToConsole( name );
     }

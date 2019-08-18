@@ -49,24 +49,24 @@ class LibraryTest {
 
         assertEquals( 3, library.books.size() );
         assertEquals( 1, library.checkedOutBooks.size() );
-        assertEquals( expected,actual);
+        assertEquals( expected, actual );
     }
 
     @Test
     void expectExceptionWhenCheckoutIsUnSuccessful() throws BookNotAvailableException {
-        library.checkout("Learn You a Haskell for Great Good!"  );
+        library.checkout( "Learn You a Haskell for Great Good!" );
 
-        assertThrows( BookNotAvailableException.class, ()->library.checkout("Learn You a Haskell for Great Good!"));
+        assertThrows( BookNotAvailableException.class, () -> library.checkout( "Learn You a Haskell for Great Good!" ) );
     }
 
     @Test
     void expectUserCanAbleToReturnBookToTheLibrary() throws BookNotAvailableException, InvalidBookException {
         library.checkout( "Learn You a Haskell for Great Good!" );
 
-        library.returnBook("Learn You a Haskell for Great Good!");
+        library.returnBook( "Learn You a Haskell for Great Good!" );
 
-        assertEquals(4,library.books.size()  );
-        assertEquals( 0,library.checkedOutBooks.size() );
+        assertEquals( 4, library.books.size() );
+        assertEquals( 0, library.checkedOutBooks.size() );
     }
 
 
@@ -74,6 +74,6 @@ class LibraryTest {
     void expectUserToBeNotifiedOnUnsuccessfulReturnOfBook() throws BookNotAvailableException {
         library.checkout( "Introduction to Algorithms" );
 
-        assertThrows( InvalidBookException.class,()-> library.returnBook("Introduction to Algorits"   ) );
+        assertThrows( InvalidBookException.class, () -> library.returnBook( "Introduction to Algorits" ) );
     }
 }
