@@ -24,7 +24,7 @@ public class ConsoleIO {
         System.out.printf( titleTemplate, "Id", "Name", "Author", "Year Published" );
         int index = 1;
         for (Book book : listOfBooks) {
-            book.printDetails( index );
+            System.out.println(book.printDetails( index ));
             index++;
         }
     }

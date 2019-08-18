@@ -28,7 +28,7 @@ public class Bibiloteca {
         consoleIo.printBookList( books );
     }
 
-    public void run() throws BookNotAvailableException {
+    public void run(){
         welcome();
         String choice;
         while (application_status) {
@@ -56,7 +56,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( menu );
     }
 
-    public void selectMenuOptionWithChoice( String choice ) throws BookNotAvailableException {
+    public void selectMenuOptionWithChoice( String choice ) {
         String errorMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";
