@@ -3,6 +3,7 @@ package com.thoughtworks.pathashala67.Controller;
 import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Checkout;
+import com.thoughtworks.pathashala67.Model.GiveBack;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
@@ -90,16 +91,11 @@ public class Bibiloteca {
     }
 
     private void returnBook() {
-        enterBookName();
-        String bookName = consoleIo.getBookName();
-        try {
-            consoleIo.printToConsole( library.returnBook( bookName ) );
-        } catch (InvalidBookException exception) {
-            consoleIo.printToConsole( exception.getMessage() );
-        }
+        String bookName = enterBookName();
+        GiveBack returnBook = new GiveBack();
+        String statusMessage = returnBook.performAction( library, bookName );
+        consoleIo.printToConsole( statusMessage );
     }
-
-
     private String enterBookName() {
         String name = "Enter the book name ";
         consoleIo.printToConsole( name );
