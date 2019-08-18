@@ -18,7 +18,7 @@ public class Book {
     }
 
     public String printDetails( int index ) {
-        return( String.format( "|%-5s| %-50s| %-25s| %-15s|%n", index, name, author, publishedYear ) );
+        return (String.format( "|%-5s| %-50s| %-25s| %-15s|%n", index, name, author, publishedYear ));
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Book {
         if (this == o) return true;
         if (!(o instanceof Book)) return false;
         Book book = (Book) o;
-        return Objects.equals( name, book.name ) ;
+        return Objects.equals( name, book.name );
 
     }
 

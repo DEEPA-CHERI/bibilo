@@ -28,7 +28,7 @@ public class Bibiloteca {
         consoleIo.printBookList( books );
     }
 
-    public void run(){
+    public void run() {
         welcome();
         String choice;
         while (application_status) {

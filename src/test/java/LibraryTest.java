@@ -60,7 +60,7 @@ class LibraryTest {
     }
 
     @Test
-    void expectUserCanAbleToReturnBookToTheLibrary() throws BookNotAvailableException, InvalidBookException {
+    void expectUserAbleToReturnBook() throws BookNotAvailableException, InvalidBookException {
         library.checkout( "Learn You a Haskell for Great Good!" );
 
         library.returnBook( "Learn You a Haskell for Great Good!" );
@@ -68,7 +68,6 @@ class LibraryTest {
         assertEquals( 4, library.books.size() );
         assertEquals( 0, library.checkedOutBooks.size() );
     }
-
 
     @Test
     void expectUserToBeNotifiedOnUnsuccessfulReturnOfBook() throws BookNotAvailableException {

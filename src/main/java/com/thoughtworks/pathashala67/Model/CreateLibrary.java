@@ -5,7 +5,7 @@ import java.util.List;
 
 public class CreateLibrary {
     public static List<Book> loadBooks() {
-        List<Book>books = new ArrayList<>(  );
+        List<Book> books = new ArrayList<>();
         books.add( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ) );
         books.add( new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ) );
         books.add( new Book( "Head First Design Patterns", "Eric Freeman", 1960 ) );
