@@ -1,11 +1,9 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
 import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Model.Book;
+import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.mockito.Mockito.*;
 
@@ -13,12 +11,13 @@ class BibilotecaTest {
 
     private ConsoleIO consoleIO;
     private Bibiloteca bibiloteca;
-    private List<Book> books;
+    private Library library;
 
     @BeforeEach
     void beforeEach() {
         consoleIO = mock( ConsoleIO.class );
-        bibiloteca = new Bibiloteca( consoleIO, books );
+        library = mock(Library.class);
+        bibiloteca = new Bibiloteca( consoleIO, library);
     }
 
 
@@ -61,7 +60,7 @@ class BibilotecaTest {
                 "Select a valid option!\n" +
                 "=====================";
 
-        bibiloteca.selectMenuOptionWithChoice( "XYZ" );
+        bibiloteca.selectMenuOption( "XYZ" );
 
         verify( consoleIO, times( 1 ) ).printToConsole( expectedMessage );
     }

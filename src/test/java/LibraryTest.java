@@ -15,11 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LibraryTest {
 
+
     private Library library;
+    List<Book> books;
+
 
     @BeforeEach
     void setUp() {
-        List<Book> books = new ArrayList<>( Arrays.asList( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ),
+        books = new ArrayList<>( Arrays.asList( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ),
                 new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ),
                 new Book( "Head First Design Patterns", "Eric Freeman", 1960 ),
                 new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) ) );

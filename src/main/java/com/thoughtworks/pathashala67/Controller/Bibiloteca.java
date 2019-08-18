@@ -35,7 +35,7 @@ public class Bibiloteca {
             viewMenuOptions();
             selectChoice();
             choice = consoleIo.getInput();
-            selectMenuOptionWithChoice( choice );
+            selectMenuOption( choice );
         }
     }
 
@@ -56,7 +56,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( menu );
     }
 
-    public void selectMenuOptionWithChoice( String choice ) {
+    public void selectMenuOption( String choice ) {
         String errorMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";
@@ -92,19 +92,11 @@ public class Bibiloteca {
         }
     }
 
-    private void checkOutBook() {
-        enterBookName();
-        String bookName = consoleIo.getBookName();
-        try {
-            consoleIo.printToConsole( library.checkout( bookName ) );
-        } catch (BookNotAvailableException exception) {
-            consoleIo.printToConsole( exception.getMessage() );
-        }
-    }
 
-    private void enterBookName() {
+    private String enterBookName() {
         String name = "Enter the book name ";
         consoleIo.printToConsole( name );
+        return name;
     }
 }
 

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    public List<Book> books;
-    public List<Book> checkedOutBooks = new ArrayList<>();
+    private List<Book> books;
+    private List<Book> checkedOutBooks = new ArrayList<>();
 
     public Library( List<Book> books ) {
         this.books = books;
