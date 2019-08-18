@@ -16,8 +16,8 @@ class BibilotecaTest {
     @BeforeEach
     void beforeEach() {
         consoleIO = mock( ConsoleIO.class );
-        library = mock(Library.class);
-        bibiloteca = new Bibiloteca( consoleIO, library);
+        library = mock( Library.class );
+        bibiloteca = new Bibiloteca( consoleIO, library );
     }
 
 
@@ -44,12 +44,12 @@ class BibilotecaTest {
     }
 
     @Test
-    void expectInvalidMessageWhenInvalidInputGiven() throws BookNotAvailableException {
+    void expectInvalidMessageWhenInvalidInputGiven() {
         String expectedMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";
 
-        bibiloteca.selectMenuOption( "XYZ" );
+        bibiloteca.selectMenuOption( "4" );
 
         verify( consoleIO, times( 1 ) ).printToConsole( expectedMessage );
     }

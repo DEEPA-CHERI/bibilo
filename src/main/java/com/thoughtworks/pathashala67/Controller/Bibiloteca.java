@@ -1,10 +1,7 @@
 package com.thoughtworks.pathashala67.Controller;
 
 import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
-import com.thoughtworks.pathashala67.Model.Book;
-import com.thoughtworks.pathashala67.Model.Checkout;
-import com.thoughtworks.pathashala67.Model.GiveBack;
-import com.thoughtworks.pathashala67.Model.Library;
+import com.thoughtworks.pathashala67.Model.*;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 import java.util.List;
@@ -58,44 +55,20 @@ public class Bibiloteca {
     }
 
     public void selectMenuOption( String choice ) {
-        String errorMessage = "=====================\n" +
-                "Select a valid option!\n" +
-                "=====================";
-        switch (choice) {
-            case "1":
-                viewListOfBooks();
-                break;
-            case "2": {
-                bookCheckOut();
-                break;
-            }
-            case "3": {
-                returnBook();
-                break;
-            }
-            case "q": {
-                application_status = false;
-                return;
-            }
-            default:
-                consoleIo.printToConsole( errorMessage );
+
+        if (choice == "q") {
+            application_status = false;
+            return;
         }
-
-    }
-
-    private void bookCheckOut() {
+        if (choice == "1") {
+            viewListOfBooks();
+        }
         String bookName = enterBookName();
-        Checkout checkout = new Checkout();
-        String statusMessage = checkout.performAction( library, bookName );
+        ActionPerformer actionPerformer = new ActionPerformer( library, bookName );
+        String statusMessage = actionPerformer.perform( choice );
         consoleIo.printToConsole( statusMessage );
     }
 
-    private void returnBook() {
-        String bookName = enterBookName();
-        GiveBack returnBook = new GiveBack();
-        String statusMessage = returnBook.performAction( library, bookName );
-        consoleIo.printToConsole( statusMessage );
-    }
     private String enterBookName() {
         String name = "Enter the book name ";
         consoleIo.printToConsole( name );

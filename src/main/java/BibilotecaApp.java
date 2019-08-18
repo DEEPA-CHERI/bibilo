@@ -4,7 +4,7 @@ import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 class BibilotecaApp {
-    public static void main( String[] args ){
+    public static void main( String[] args ) {
         ConsoleIO consoleIO = new ConsoleIO();
         Library library = BooksLoader.loadBooks();
         Bibiloteca bibiloteca = new Bibiloteca( consoleIO, library );
