@@ -1,4 +1,5 @@
 import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Library;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,7 +60,7 @@ class LibraryTest {
     }
 
     @Test
-    void expectUserCanAbleToReturnBookToTheLibrary() throws BookNotAvailableException {
+    void expectUserCanAbleToReturnBookToTheLibrary() throws BookNotAvailableException, InvalidBookException {
         library.checkout( "Learn You a Haskell for Great Good!" );
 
         library.returnBook("Learn You a Haskell for Great Good!");
@@ -68,13 +69,11 @@ class LibraryTest {
         assertEquals( 0,library.checkedOutBooks.size() );
     }
 
+
     @Test
-    void expectUserToBeNotifiedOnSuccessfulReturnOfBook() throws BookNotAvailableException {
+    void expectUserToBeNotifiedOnUnsuccessfulReturnOfBook() throws BookNotAvailableException {
         library.checkout( "Introduction to Algorithms" );
-        String expected = "Thank you for returning the book";
 
-        String actual = library.returnBook("Introduction to Algorithms");
-
-        assertEquals(expected,actual  );
+        assertThrows( InvalidBookException.class,()-> library.returnBook("Introduction to Algorits"   ) );
     }
 }
