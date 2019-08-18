@@ -1,7 +1,8 @@
 package com.thoughtworks.pathashala67.Model;
 
 import java.util.Objects;
-//
+
+//a written or printed work consisting of pages
 public class Book {
     private String name;
     private String author;

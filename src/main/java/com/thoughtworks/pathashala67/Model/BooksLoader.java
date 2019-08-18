@@ -2,7 +2,7 @@ package com.thoughtworks.pathashala67.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-//Load books to the Bibiloteca
+//Load books to the Library
 public class  BooksLoader{
     public static Library loadBooks() {
         List<Book> books = new ArrayList<>();

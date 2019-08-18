@@ -6,7 +6,7 @@ import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// group of books management
 public class Library {
     private List<Book> books;
     private List<Book> checkedOutBooks = new ArrayList<>();
