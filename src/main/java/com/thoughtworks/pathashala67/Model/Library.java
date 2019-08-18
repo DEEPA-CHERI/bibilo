@@ -39,4 +39,9 @@ public class Library {
         return searchStatus;
     }
 
+    public void returnBook( String bookName ) throws BookNotAvailableException {
+        int bookIndex = searchForBook( bookName,checkedOutBooks );
+        books.add(checkedOutBooks.get(bookIndex));
+        checkedOutBooks.remove( bookIndex );
+    }
 }

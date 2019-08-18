@@ -46,6 +46,7 @@ class BibilotecaTest {
                 "=========================\n" +
                 "1. List of Books\n" +
                 "2 - Checkout Book\n" +
+                "3 - Return Book\n" +
                 "q. Quit the application\n";
 
         bibiloteca.viewMenuOptions();

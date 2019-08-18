@@ -48,12 +48,13 @@ public class Bibiloteca {
                 "=========================\n" +
                 "1. List of Books\n" +
                 "2 - Checkout Book\n" +
+                "3 - Return Book\n" +
                 "q. Quit the application\n";
 
         consoleIo.printToConsole( menu );
     }
 
-    public void selectMenuOptionWithChoice( String choice ) {
+    public void selectMenuOptionWithChoice( String choice ) throws BookNotAvailableException {
         String errorMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";
@@ -62,14 +63,21 @@ public class Bibiloteca {
                 viewListOfBooks();
                 break;
             case "2": {
-                String bookNumber = "Enter the book name ";
-                consoleIo.printToConsole( bookNumber );
+                String name = "Enter the book name ";
+                consoleIo.printToConsole( name );
                 String bookName = consoleIo.getBookName();
                 try {
                     consoleIo.printToConsole( library.checkout( bookName ) );
                 } catch (BookNotAvailableException exception) {
-                    consoleIo.printToConsole( exception.getMessage());
+                    consoleIo.printToConsole( exception.getMessage() );
                 }
+                break;
+            }
+            case "3": {
+                String name = "Enter the book name ";
+                consoleIo.printToConsole( name );
+                String bookName = consoleIo.getBookName();
+                library.returnBook( bookName );
                 break;
             }
             case "q": {

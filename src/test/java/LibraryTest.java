@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+
 
 class LibraryTest {
 
@@ -59,6 +59,13 @@ class LibraryTest {
         assertThrows( BookNotAvailableException.class, ()->library.checkout("Learn You a Haskell for Great Good!"));
     }
 
+    @Test
+    void expectUserCanAbleToReturnBookToTheLibrary() throws BookNotAvailableException {
+        library.checkout( "Learn You a Haskell for Great Good!" );
 
+        library.returnBook("Learn You a Haskell for Great Good!");
 
+        assertEquals(4,library.books.size()  );
+        assertEquals( 0,library.checkedOutBooks.size() );
+    }
 }
