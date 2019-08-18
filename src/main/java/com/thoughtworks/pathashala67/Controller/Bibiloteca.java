@@ -1,8 +1,8 @@
 package com.thoughtworks.pathashala67.Controller;
 
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.Model.Book;
+import com.thoughtworks.pathashala67.Model.Checkout;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
@@ -14,13 +14,13 @@ public class Bibiloteca {
     private boolean application_status = true;
 
 
-    public Bibiloteca( ConsoleIO consoleIo, List<Book> books ) {
+    public Bibiloteca( ConsoleIO consoleIo, Library library ) {
         this.consoleIo = consoleIo;
-        this.library = new Library( books );
+        this.library = library;
     }
 
     public void welcome() {
-        consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!" );
+        consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great books in Bangalore!" );
     }
 
     private void viewListOfBooks() {
