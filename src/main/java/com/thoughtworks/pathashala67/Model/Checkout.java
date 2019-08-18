@@ -5,9 +5,9 @@ import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 public class Checkout implements Action {
 
     @Override
-    public String performAction( Library library, String bookName ) {
+    public String performAction( Library books, String bookName ) {
         try {
-            return library.checkout( bookName );
+            return books.checkout( bookName );
         } catch (BookNotAvailableException exception) {
             return exception.getMessage();
         }

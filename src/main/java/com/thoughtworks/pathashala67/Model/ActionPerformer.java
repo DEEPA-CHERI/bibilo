@@ -1,14 +1,13 @@
 package com.thoughtworks.pathashala67.Model;
 
-import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-
 import java.util.ArrayList;
 import java.util.List;
 
+//Models to perform various activities
 public class ActionPerformer {
-    List<Action> actions = new ArrayList<>();
-    Library library;
-    String bookName;
+    private List<Action> actions = new ArrayList<>();
+    private Library library;
+    private String bookName;
 
     public ActionPerformer( Library library, String bookName ) {
         actions.add( new Checkout() );
@@ -22,9 +21,9 @@ public class ActionPerformer {
                 "Select a valid option!\n" +
                 "=====================";
         int index = Integer.parseInt( choice );
-        if (index + 1 > actions.size())
+        if (index  > actions.size()+1)
             return errorMessage;
-        Action actionPerformer = actions.get( index - 1 );
+        Action actionPerformer = actions.get( index - 2 );
         return actionPerformer.performAction( library, bookName );
     }
 }

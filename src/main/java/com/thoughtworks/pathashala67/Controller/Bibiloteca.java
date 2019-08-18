@@ -1,6 +1,5 @@
 package com.thoughtworks.pathashala67.Controller;
 
-import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.Model.*;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
@@ -12,7 +11,7 @@ public class Bibiloteca {
     private boolean application_status = true;
 
 
-    public Bibiloteca( ConsoleIO consoleIo, Library library ) {
+    public Bibiloteca( ConsoleIO consoleIo, Library library) {
         this.consoleIo = consoleIo;
         this.library = library;
     }
@@ -56,12 +55,13 @@ public class Bibiloteca {
 
     public void selectMenuOption( String choice ) {
 
-        if (choice == "q") {
+        if (choice.equals( "q" )) {
             application_status = false;
             return;
         }
-        if (choice == "1") {
+        if (choice.equals( "1" )) {
             viewListOfBooks();
+            return;
         }
         String bookName = enterBookName();
         ActionPerformer actionPerformer = new ActionPerformer( library, bookName );
@@ -72,7 +72,7 @@ public class Bibiloteca {
     private String enterBookName() {
         String name = "Enter the book name ";
         consoleIo.printToConsole( name );
-        return name;
+        return consoleIo.getBookName();
     }
 }
 

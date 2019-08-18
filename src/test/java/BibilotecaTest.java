@@ -1,5 +1,4 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Model.Library;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,12 +10,11 @@ class BibilotecaTest {
 
     private ConsoleIO consoleIO;
     private Bibiloteca bibiloteca;
-    private Library library;
 
     @BeforeEach
     void beforeEach() {
         consoleIO = mock( ConsoleIO.class );
-        library = mock( Library.class );
+        Library library = mock( Library.class );
         bibiloteca = new Bibiloteca( consoleIO, library );
     }
 

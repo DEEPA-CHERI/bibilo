@@ -15,10 +15,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class LibraryTest {
 
-
     private Library library;
     List<Book> books;
-
 
     @BeforeEach
     void setUp() {
