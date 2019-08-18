@@ -2,9 +2,9 @@ package com.thoughtworks.pathashala67.Model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-public class CreateLibrary {
-    public static List<Book> loadBooks() {
+//Load books to the library
+public class  BooksLoader{
+    public static Library loadBooks() {
         List<Book> books = new ArrayList<>();
         books.add( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ) );
         books.add( new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ) );
@@ -21,6 +21,6 @@ public class CreateLibrary {
         books.add( new Book( "To Sir With Love", "Braithwaite", 2000 ) );
         books.add( new Book( "Rosy is My Relative", "Durrell, Gerald", 2011 ) );
         books.add( new Book( "Short History of the World, A", "Wells, H G", 1877 ) );
-        return books;
+        return  new Library( books );
     }
 }
