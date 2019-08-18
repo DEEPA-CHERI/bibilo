@@ -1,4 +1,5 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
+import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,7 +56,7 @@ class BibilotecaTest {
     }
 
     @Test
-    void expectInvalidMessageWhenInvalidInputGiven() {
+    void expectInvalidMessageWhenInvalidInputGiven() throws BookNotAvailableException {
         String expectedMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";

@@ -77,7 +77,7 @@ public class Bibiloteca {
                 String name = "Enter the book name ";
                 consoleIo.printToConsole( name );
                 String bookName = consoleIo.getBookName();
-                library.returnBook( bookName );
+                consoleIo.printToConsole(library.returnBook( bookName ));
                 break;
             }
             case "q": {

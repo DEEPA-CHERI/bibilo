@@ -1,13 +1,13 @@
 import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Model.Book;
 import com.thoughtworks.pathashala67.Model.Library;
-import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -53,7 +53,6 @@ class LibraryTest {
 
     @Test
     void expectExceptionWhenCheckoutIsUnSuccessful() throws BookNotAvailableException {
-        String expected = "Sorry, that book is not available";
         library.checkout("Learn You a Haskell for Great Good!"  );
 
         assertThrows( BookNotAvailableException.class, ()->library.checkout("Learn You a Haskell for Great Good!"));
@@ -67,5 +66,15 @@ class LibraryTest {
 
         assertEquals(4,library.books.size()  );
         assertEquals( 0,library.checkedOutBooks.size() );
+    }
+
+    @Test
+    void expectUserToBeNotifiedOnSuccessfulReturnOfBook() throws BookNotAvailableException {
+        library.checkout( "Introduction to Algorithms" );
+        String expected = "Thank you for returning the book";
+
+        String actual = library.returnBook("Introduction to Algorithms");
+
+        assertEquals(expected,actual  );
     }
 }
