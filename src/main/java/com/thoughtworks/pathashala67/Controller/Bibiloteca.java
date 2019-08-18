@@ -27,7 +27,7 @@ public class Bibiloteca {
         consoleIo.printBookList( books );
     }
 
-    public void run() {
+    public void run() throws BookNotAvailableException {
         String choice;
         while (application_status) {
             viewMenuOptions();
