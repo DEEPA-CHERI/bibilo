@@ -1,22 +1,29 @@
 package com.thoughtworks.pathashala67.controller;
 
+import com.thoughtworks.pathashala67.view.IO;
 import com.thoughtworks.pathashala67.view.ConsoleIO;
 
-public class Controller {
+public class Controller implements IO {
     private ConsoleIO consoleIo = new ConsoleIO();
-
-    public void display( String displayBookListDetails ) {
-        consoleIo.printToConsole( displayBookListDetails );
-    }
-
-    public void printBooks( String books ) {
-        consoleIo.printBookList( books );
-    }
 
     public String getBookName() {
         return consoleIo.getBookName();
     }
 
+    @Override
+    public void printToConsole( String message ) {
+        consoleIo.printToConsole( message );
+    }
+
+    @Override
+    public void printBookList( String bookList ) {
+        consoleIo.printBookList( bookList );
+    }
+
+    @Override
+    public String getInput() {
+        return consoleIo.getInput();
+    }
 }
 
 

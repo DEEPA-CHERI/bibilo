@@ -27,7 +27,7 @@ public class ActionPerformer {
                 "=====================";
         int index = Integer.parseInt( choice );
         if (index > actions.size()) {
-            controller.display( errorMessage );
+            controller.printToConsole( errorMessage );
             return;
         }
         Action actionPerformer = actions.get( index - 1 );

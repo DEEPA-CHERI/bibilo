@@ -2,7 +2,7 @@ package com.thoughtworks.pathashala67.view;
 
 import java.util.Scanner;
 
-public class ConsoleIO {
+public class ConsoleIO implements IO {
 
     private Scanner scanner = new Scanner( System.in );
 

@@ -15,7 +15,7 @@ public class CheckoutAction implements Action {
 
     @Override
     public void performAction(){
-        controller.display( "enter the book name" );
+        controller.printToConsole( "enter the book name" );
         String bookName =controller.getBookName();
         String status;
         try {
@@ -23,7 +23,7 @@ public class CheckoutAction implements Action {
         } catch (BookNotAvailableException exception) {
             status = exception.getMessage();
         }
-        controller.display( status );
+        controller.printToConsole( status );
     }
 
 }
