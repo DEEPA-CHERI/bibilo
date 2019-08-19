@@ -1,8 +1,5 @@
 package com.thoughtworks.pathashala67.View;
 
-import com.thoughtworks.pathashala67.Model.Book;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleIO {

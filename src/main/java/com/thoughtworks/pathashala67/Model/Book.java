@@ -18,7 +18,7 @@ public class Book {
         this.name = bookName;
     }
 
-    public String printDetails( int index ) {
+    String printDetails( int index ) {
         return (String.format( "|%-5s| %-50s| %-25s| %-15s|%n", index, name, author, publishedYear ));
     }
 

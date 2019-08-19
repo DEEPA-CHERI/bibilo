@@ -6,7 +6,7 @@ import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 // Represents taking
 public class Checkout implements Action {
 
-    Books books;
+    private Books books;
     private CommonController controller = new CommonController();
 
     Checkout( Books books ) {

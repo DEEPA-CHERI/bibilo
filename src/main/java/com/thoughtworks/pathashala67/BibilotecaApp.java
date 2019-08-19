@@ -8,7 +8,7 @@ import com.thoughtworks.pathashala67.Model.Movies;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 
 class BibilotecaApp {
-    public static void main( String[] args ) throws BookNotAvailableException {
+    public static void main( String[] args ){
         ConsoleIO consoleIO = new ConsoleIO();
         Books books = Intializer.loadBooks();
         Movies movies = Intializer.loadMovies();

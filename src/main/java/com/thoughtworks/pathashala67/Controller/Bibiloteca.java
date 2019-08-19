@@ -23,7 +23,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great books in Bangalore!" );
     }
 
-    public void run() throws BookNotAvailableException {
+    public void run() {
         welcome();
         String choice;
         while (application_status) {
@@ -51,7 +51,7 @@ public class Bibiloteca {
         consoleIo.printToConsole( menu );
     }
 
-    private void selectMenuOption( String choice ) throws BookNotAvailableException {
+    private void selectMenuOption( String choice ){
         if (choice.equals( "q" )) {
             application_status = false;
             return;

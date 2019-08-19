@@ -5,7 +5,7 @@ import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 
 // Represent returning back
 public class GiveBack implements Action {
-    Books books;
+    private Books books;
     private CommonController controller = new CommonController();
 
     GiveBack( Books books ) {
