@@ -16,6 +16,9 @@ public class Books {
 
     String displayBookListDetails() {
         StringBuilder booksDetails = new StringBuilder();
+        String titleTemplate = "|%-5s| %-50s| %-25s| %-15s|%n";
+        booksDetails.append("********************Book List********************\n" );
+        booksDetails.append(String.format(titleTemplate, "Id", "Name", "Author", "Year Published" ));
         int index = 1;
         for (Book book : books) {
             booksDetails.append( book.printDetails( index - 1 ) + "\n" );

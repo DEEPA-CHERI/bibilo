@@ -10,13 +10,15 @@ import java.util.List;
 public class ActionPerformer {
     private List<Action> actions = new ArrayList<>();
     private Books books;
+    private Movies movies;
     private Controller controller = new Controller();
 
 
-    public ActionPerformer( Books books ) {
+    public ActionPerformer( Books books,Movies movies ) {
         actions.add( new DisplayAction( books ) );
-        actions.add( new CheckoutAction( books ) );
-        actions.add( new GiveBackAction( books ) );
+        actions.add( new CheckoutAction( books) );
+        actions.add( new GiveBackAction( books) );
+        actions.add(new DisplayAction( movies ));
         this.books = books;
 
     }

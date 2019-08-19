@@ -16,9 +16,7 @@ public class ConsoleIO implements IO {
 
 
     public void printBookList( String bookList ) {
-        String titleTemplate = "|%-5s| %-50s| %-25s| %-15s|%n";
-        System.out.println( "********************Book List********************" );
-        System.out.printf( titleTemplate, "Id", "Name", "Author", "Year Published" );
+
         System.out.println(bookList);
     }
 

@@ -2,15 +2,25 @@ package com.thoughtworks.pathashala67.model;
 
 import com.thoughtworks.pathashala67.controller.Controller;
 
-public class DisplayAction implements Action {
-    private Books books;
+public class DisplayAction<T> implements Action {
+    private T item;
     private Controller controller = new Controller();
 
-    DisplayAction( Books books ) {
-        this.books = books;
+    DisplayAction( T item ) {
+        this.item = item;
     }
+
     @Override
     public void performAction() {
-        controller.printBooks( books.displayBookListDetails() );
+        if (item instanceof Books) {
+            Books books = (Books) item;
+            controller.printToConsole( books.displayBookListDetails() );
+        }
+        if (item instanceof Movies) {
+            Movies movies = (Movies) item;
+            controller.printToConsole( movies.displayMovieListDetails() );
+        }
+
     }
+
 }

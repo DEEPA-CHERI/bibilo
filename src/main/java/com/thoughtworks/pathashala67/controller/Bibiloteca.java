@@ -42,10 +42,11 @@ public class Bibiloteca {
         String menu = "=========================\n"
                 + "           Menu           \n" +
                 "=========================\n" +
-                "1. List of Books\n" +
+                "1 - List of Books\n" +
                 "2 - Checkout Book\n" +
                 "3 - Return Book\n" +
-                "q. Quit the application\n";
+                "4 - List of Movies\n" +
+                "q - Quit the application\n";
 
         consoleIo.printToConsole( menu );
     }
@@ -55,7 +56,7 @@ public class Bibiloteca {
             application_status = false;
             return;
         }
-        ActionPerformer actionPerformer = new ActionPerformer( books );
+        ActionPerformer actionPerformer = new ActionPerformer( books,movies );
         actionPerformer.perform( choice );
     }
 }
