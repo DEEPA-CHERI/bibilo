@@ -7,7 +7,7 @@ public class  BooksLoader{
     public static Library loadBooks() {
         List<Book> books = new ArrayList<>();
         books.add( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ) );
-        books.add( new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ) );
+        books.add( new Book( "Learn You a Haskell for Great Good!", "Miran Lipovaca", 1940 ) );
         books.add( new Book( "Head First Design Patterns", "Eric Freeman", 1960 ) );
         books.add( new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) );
         books.add( new Book( "The Adventures of Duck and Goose", "Sir Quackalot", 1906 ) );
