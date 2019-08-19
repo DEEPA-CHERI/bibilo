@@ -7,13 +7,13 @@ import java.util.List;
 
 public class Bibiloteca {
     private ConsoleIO consoleIo;
-    private Library library;
+    private Books books;
     private boolean application_status = true;
 
 
-    public Bibiloteca( ConsoleIO consoleIo, Library library) {
+    public Bibiloteca( ConsoleIO consoleIo, Books books ) {
         this.consoleIo = consoleIo;
-        this.library = library;
+        this.books = books;
     }
 
     public void welcome() {
@@ -21,7 +21,7 @@ public class Bibiloteca {
     }
 
     private void viewListOfBooks() {
-        List<Book> books = library.displayBookListDetails();
+        List<Book> books = this.books.displayBookListDetails();
         consoleIo.printBookList( books );
     }
 
@@ -64,7 +64,7 @@ public class Bibiloteca {
             return;
         }
         String bookName = enterBookName();
-        ActionPerformer actionPerformer = new ActionPerformer( library, bookName );
+        ActionPerformer actionPerformer = new ActionPerformer( books, bookName );
         String statusMessage = actionPerformer.perform( choice );
         consoleIo.printToConsole( statusMessage );
     }

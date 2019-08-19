@@ -5,9 +5,9 @@ import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 public class GiveBack implements Action {
 
     @Override
-    public String performAction( Library library, String bookName ) {
+    public String performAction( Books books, String bookName ) {
         try {
-            return library.returnBook( bookName );
+            return books.returnBook( bookName );
         } catch (InvalidBookException exception) {
             return exception.getMessage();
         }

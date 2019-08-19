@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 //Load books to the Library
 public class  BooksLoader{
-    public static Library loadBooks() {
+    public static Books loadBooks() {
         List<Book> books = new ArrayList<>();
         books.add( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ) );
         books.add( new Book( "Learn You a Haskell for Great Good!", "Miran Lipovaca", 1940 ) );
@@ -21,6 +21,6 @@ public class  BooksLoader{
         books.add( new Book( "To Sir With Love", "Braithwaite", 2000 ) );
         books.add( new Book( "Rosy is My Relative", "Durrell, Gerald", 2011 ) );
         books.add( new Book( "Short History of the World, A", "Wells, H G", 1877 ) );
-        return  new Library( books );
+        return  new Books( books );
     }
 }

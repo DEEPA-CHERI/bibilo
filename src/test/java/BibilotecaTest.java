@@ -1,5 +1,5 @@
 import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-import com.thoughtworks.pathashala67.Model.Library;
+import com.thoughtworks.pathashala67.Model.Books;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,8 +14,8 @@ class BibilotecaTest {
     @BeforeEach
     void beforeEach() {
         consoleIO = mock( ConsoleIO.class );
-        Library library = mock( Library.class );
-        bibiloteca = new Bibiloteca( consoleIO, library );
+        Books books = mock( Books.class );
+        bibiloteca = new Bibiloteca( consoleIO, books );
     }
 
 

@@ -6,13 +6,13 @@ import java.util.List;
 //Models to perform various activities
 public class ActionPerformer {
     private List<Action> actions = new ArrayList<>();
-    private Library library;
+    private Books books;
     private String bookName;
 
-    public ActionPerformer( Library library, String bookName ) {
+    public ActionPerformer( Books books, String bookName ) {
         actions.add( new Checkout() );
         actions.add( new GiveBack() );
-        this.library = library;
+        this.books = books;
         this.bookName = bookName;
     }
 
@@ -24,6 +24,6 @@ public class ActionPerformer {
         if (index  > actions.size()+1)
             return errorMessage;
         Action actionPerformer = actions.get( index - 2 );
-        return actionPerformer.performAction( library, bookName );
+        return actionPerformer.performAction( books, bookName );
     }
 }

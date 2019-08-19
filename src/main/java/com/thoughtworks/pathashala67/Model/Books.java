@@ -3,15 +3,14 @@ package com.thoughtworks.pathashala67.Model;
 import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 
-
 import java.util.ArrayList;
 import java.util.List;
-// group of books management
-public class Library {
+
+public class Books {
     private List<Book> books;
     private List<Book> checkedOutBooks = new ArrayList<>();
 
-    public Library( List<Book> books ) {
+    public Books( List<Book> books ) {
         this.books = books;
     }
 
@@ -38,7 +37,7 @@ public class Library {
     public String returnBook( String bookName ) throws InvalidBookException {
         Book book;
         try {
-            book = searchForBook( bookName, checkedOutBooks );
+            book = searchForBook( bookName,  checkedOutBooks );
         } catch (BookNotAvailableException exception) {
             throw new InvalidBookException( "That is not a valid book to return." );
         }
@@ -46,4 +45,5 @@ public class Library {
         checkedOutBooks.remove( book );
         return ("Thank you for returning the book");
     }
+
 }

@@ -1,7 +1,7 @@
 import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.Model.Book;
-import com.thoughtworks.pathashala67.Model.Library;
+import com.thoughtworks.pathashala67.Model.Books;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,57 +13,57 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-class LibraryTest {
+class BooksTest {
 
-    private Library library;
-    List<Book> books;
+    private Books books;
+    private List<Book> bookList;
 
     @BeforeEach
     void setUp() {
-        books = new ArrayList<>( Arrays.asList( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ),
+        bookList = new ArrayList<>( Arrays.asList( new Book( "Introduction to Algorithms", "Thomas H. Cormen", 1975 ),
                 new Book( "Learn You a Haskell for Great Good!", "Miran Lipovača", 1940 ),
                 new Book( "Head First Design Patterns", "Eric Freeman", 1960 ),
                 new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) ) );
-        library = new Library( books );
+        books = new Books(bookList);
     }
 
     @Test
     void expectBookIndexWhenBookIsInLibrary() throws BookNotAvailableException {
-        Book book = library.searchForBook( "Programming Pearls", books );
+        Book book = books.searchForBook( "Programming Pearls", bookList );
 
-        assertEquals( books.get( 3 ), book );
+        assertEquals( bookList.get( 3 ), book );
     }
 
     @Test
     void expectSuccessMessageWhenCheckoutIsSuccessful() throws BookNotAvailableException {
         String expected = "Thank you! Enjoy the book";
 
-        String actual = library.checkout( "Learn You a Haskell for Great Good!" );
+        String actual = books.checkout( "Learn You a Haskell for Great Good!" );
 
         assertEquals( expected, actual );
     }
 
     @Test
     void expectExceptionWhenCheckoutIsUnSuccessful() throws BookNotAvailableException {
-        library.checkout( "Learn You a Haskell for Great Good!" );
+        books.checkout( "Learn You a Haskell for Great Good!" );
 
-        assertThrows( BookNotAvailableException.class, () -> library.checkout( "Learn You a Haskell for Great Good!" ) );
+        assertThrows( BookNotAvailableException.class, () -> books.checkout( "Learn You a Haskell for Great Good!" ) );
     }
 
     @Test
     void expectUserAbleToReturnBook() throws BookNotAvailableException, InvalidBookException {
-        library.checkout( "Learn You a Haskell for Great Good!" );
+        books.checkout( "Learn You a Haskell for Great Good!" );
         String expected = "Thank you for returning the book";
 
-        String actual = library.returnBook( "Learn You a Haskell for Great Good!" );
+        String actual = books.returnBook( "Learn You a Haskell for Great Good!" );
 
         assertEquals( expected, actual );
     }
 
     @Test
     void expectUserToBeNotifiedOnUnsuccessfulReturnOfBook() throws BookNotAvailableException {
-        library.checkout( "Introduction to Algorithms" );
+        books.checkout( "Introduction to Algorithms" );
 
-        assertThrows( InvalidBookException.class, () -> library.returnBook( "Introduction to Algorits" ) );
+        assertThrows( InvalidBookException.class, () -> books.returnBook( "Introduction to Algorits" ) );
     }
 }
