@@ -14,8 +14,14 @@ public class Books {
         this.books = books;
     }
 
-    public List<Book> displayBookListDetails() {
-        return books;
+    String displayBookListDetails() {
+        StringBuilder booksDetails = new StringBuilder();
+        int index = 1;
+        for (Book book : books) {
+            booksDetails.append( book.printDetails( index - 1 ) + "\n" );
+            index++;
+        }
+        return booksDetails.toString();
     }
 
     public String checkout( String bookName ) throws BookNotAvailableException {
@@ -37,7 +43,7 @@ public class Books {
     public String returnBook( String bookName ) throws InvalidBookException {
         Book book;
         try {
-            book = searchForBook( bookName,  checkedOutBooks );
+            book = searchForBook( bookName, checkedOutBooks );
         } catch (BookNotAvailableException exception) {
             throw new InvalidBookException( "That is not a valid book to return." );
         }

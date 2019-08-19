@@ -1,31 +1,29 @@
 package com.thoughtworks.pathashala67.Controller;
 
-import com.thoughtworks.pathashala67.Model.*;
+import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.Model.ActionPerformer;
+import com.thoughtworks.pathashala67.Model.Books;
+import com.thoughtworks.pathashala67.Model.Movies;
 import com.thoughtworks.pathashala67.View.ConsoleIO;
-
-import java.util.List;
 
 public class Bibiloteca {
     private ConsoleIO consoleIo;
     private Books books;
+    private Movies movies;
     private boolean application_status = true;
 
 
-    public Bibiloteca( ConsoleIO consoleIo, Books books ) {
+    public Bibiloteca( ConsoleIO consoleIo, Books books, Movies movies ) {
         this.consoleIo = consoleIo;
         this.books = books;
+        this.movies = movies;
     }
 
     public void welcome() {
         consoleIo.printToConsole( "Welcome to Biblioteca. Your one-stop-shop for great books in Bangalore!" );
     }
 
-    private void viewListOfBooks() {
-        List<Book> books = this.books.displayBookListDetails();
-        consoleIo.printBookList( books );
-    }
-
-    public void run() {
+    public void run() throws BookNotAvailableException {
         welcome();
         String choice;
         while (application_status) {
@@ -53,26 +51,13 @@ public class Bibiloteca {
         consoleIo.printToConsole( menu );
     }
 
-    public void selectMenuOption( String choice ) {
-
+    private void selectMenuOption( String choice ) throws BookNotAvailableException {
         if (choice.equals( "q" )) {
             application_status = false;
             return;
         }
-        if (choice.equals( "1" )) {
-            viewListOfBooks();
-            return;
-        }
-        String bookName = enterBookName();
-        ActionPerformer actionPerformer = new ActionPerformer( books, bookName );
-        String statusMessage = actionPerformer.perform( choice );
-        consoleIo.printToConsole( statusMessage );
-    }
-
-    private String enterBookName() {
-        String name = "Enter the book name ";
-        consoleIo.printToConsole( name );
-        return consoleIo.getBookName();
+        ActionPerformer actionPerformer = new ActionPerformer( books );
+        actionPerformer.perform( choice );
     }
 }
 

@@ -18,15 +18,11 @@ public class ConsoleIO {
     }
 
 
-    public void printBookList( List<Book> listOfBooks ) {
+    public void printBookList( String bookList ) {
         String titleTemplate = "|%-5s| %-50s| %-25s| %-15s|%n";
         System.out.println( "********************Book List********************" );
         System.out.printf( titleTemplate, "Id", "Name", "Author", "Year Published" );
-        int index = 1;
-        for (Book book : listOfBooks) {
-            System.out.println( book.printDetails( index ) );
-            index++;
-        }
+        System.out.println(bookList);
     }
 
     public String getBookName() {
