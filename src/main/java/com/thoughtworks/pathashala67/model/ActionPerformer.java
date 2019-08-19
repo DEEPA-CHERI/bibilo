@@ -1,5 +1,6 @@
 package com.thoughtworks.pathashala67.model;
 
+import com.thoughtworks.pathashala67.controller.Controller;
 import com.thoughtworks.pathashala67.view.ConsoleIO;
 
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import java.util.List;
 public class ActionPerformer {
     private List<Action> actions = new ArrayList<>();
     private Books books;
-    private ConsoleIO consoleIO = new ConsoleIO();
+    private Controller controller = new Controller();
 
 
     public ActionPerformer( Books books ) {
@@ -26,7 +27,7 @@ public class ActionPerformer {
                 "=====================";
         int index = Integer.parseInt( choice );
         if (index > actions.size()) {
-            consoleIO.printToConsole( errorMessage );
+            controller.display( errorMessage );
             return;
         }
         Action actionPerformer = actions.get( index - 1 );
