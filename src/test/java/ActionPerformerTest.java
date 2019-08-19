@@ -1,6 +1,6 @@
-import com.thoughtworks.pathashala67.Model.ActionPerformer;
-import com.thoughtworks.pathashala67.Model.Book;
-import com.thoughtworks.pathashala67.Model.Books;
+import com.thoughtworks.pathashala67.model.ActionPerformer;
+import com.thoughtworks.pathashala67.model.Book;
+import com.thoughtworks.pathashala67.model.Books;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +27,7 @@ class ActionPerformerTest {
 
     @Test
     void expectToCallCheckoutMethod() {
-        ActionPerformer actionPerformer = new ActionPerformer(  books, "Programming Pearls" );
+        ActionPerformer actionPerformer = new ActionPerformer(  books);
         String expected = "Thank you! Enjoy the book";
 
         String actual = actionPerformer.perform( "2" );
@@ -38,7 +38,7 @@ class ActionPerformerTest {
 
     @Test
     void expectToCallReturnMethod() {
-        ActionPerformer actionPerformer = new ActionPerformer( books, "Programming Pearls" );
+        ActionPerformer actionPerformer = new ActionPerformer( books );
         String expected = "Thank you for returning the book";
         actionPerformer.perform( "2" );
 

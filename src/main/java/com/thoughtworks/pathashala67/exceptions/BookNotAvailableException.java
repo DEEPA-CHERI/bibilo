@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67.Exceptions;
+package com.thoughtworks.pathashala67.exceptions;
 
 public class BookNotAvailableException extends Exception {
     public BookNotAvailableException( String errorMessage ) {

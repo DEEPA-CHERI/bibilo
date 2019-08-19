@@ -1,14 +1,13 @@
-package com.thoughtworks.pathashala67.Model;
-
-import com.thoughtworks.pathashala67.Controller.CommonController;
-import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
+package com.thoughtworks.pathashala67.model;
+import com.thoughtworks.pathashala67.controller.Controller;
+import com.thoughtworks.pathashala67.exceptions.InvalidBookException;
 
 // Represent returning back
-public class GiveBack implements Action {
+public class GiveBackAction implements Action {
     private Books books;
-    private CommonController controller = new CommonController();
+    private Controller controller = new Controller();
 
-    GiveBack( Books books ) {
+    GiveBackAction( Books books ) {
         this.books = books;
     }
 

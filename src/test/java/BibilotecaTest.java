@@ -1,8 +1,7 @@
-import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Model.Books;
-import com.thoughtworks.pathashala67.Model.Movies;
-import com.thoughtworks.pathashala67.View.ConsoleIO;
+import com.thoughtworks.pathashala67.controller.Bibiloteca;
+import com.thoughtworks.pathashala67.model.Books;
+import com.thoughtworks.pathashala67.model.Movies;
+import com.thoughtworks.pathashala67.view.ConsoleIO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,17 +41,6 @@ class BibilotecaTest {
         bibiloteca.viewMenuOptions();
 
         verify( consoleIO, times( 1 ) ).printToConsole( expectedMenu );
-    }
-
-    @Test
-    void expectInvalidMessageWhenInvalidInputGiven() {
-        String expectedMessage = "=====================\n" +
-                "Select a valid option!\n" +
-                "=====================";
-
-        bibiloteca.selectMenuOption( "4" );
-
-        verify( consoleIO, times( 1 ) ).printToConsole( expectedMessage );
     }
 
     @Test

@@ -1,11 +1,10 @@
 package com.thoughtworks.pathashala67;
 
-import com.thoughtworks.pathashala67.Controller.Bibiloteca;
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Model.Books;
-import com.thoughtworks.pathashala67.Model.Intializer;
-import com.thoughtworks.pathashala67.Model.Movies;
-import com.thoughtworks.pathashala67.View.ConsoleIO;
+import com.thoughtworks.pathashala67.controller.Bibiloteca;
+import com.thoughtworks.pathashala67.model.Books;
+import com.thoughtworks.pathashala67.model.Intializer;
+import com.thoughtworks.pathashala67.model.Movies;
+import com.thoughtworks.pathashala67.view.ConsoleIO;
 
 class BibilotecaApp {
     public static void main( String[] args ){

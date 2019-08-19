@@ -1,10 +1,9 @@
-package com.thoughtworks.pathashala67.Controller;
+package com.thoughtworks.pathashala67.controller;
 
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Model.ActionPerformer;
-import com.thoughtworks.pathashala67.Model.Books;
-import com.thoughtworks.pathashala67.Model.Movies;
-import com.thoughtworks.pathashala67.View.ConsoleIO;
+import com.thoughtworks.pathashala67.model.ActionPerformer;
+import com.thoughtworks.pathashala67.model.Books;
+import com.thoughtworks.pathashala67.model.Movies;
+import com.thoughtworks.pathashala67.view.ConsoleIO;
 
 public class Bibiloteca {
     private ConsoleIO consoleIo;

@@ -1,7 +1,6 @@
-package com.thoughtworks.pathashala67.Model;
+package com.thoughtworks.pathashala67.model;
 
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.View.ConsoleIO;
+import com.thoughtworks.pathashala67.view.ConsoleIO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +13,9 @@ public class ActionPerformer {
 
 
     public ActionPerformer( Books books ) {
-        actions.add( new Display( books ) );
-        actions.add( new Checkout( books ) );
-        actions.add( new GiveBack( books ) );
+        actions.add( new DisplayAction( books ) );
+        actions.add( new CheckoutAction( books ) );
+        actions.add( new GiveBackAction( books ) );
         this.books = books;
 
     }

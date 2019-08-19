@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67.Model;
+package com.thoughtworks.pathashala67.model;
 
 // Represents various activities
 public interface Action {

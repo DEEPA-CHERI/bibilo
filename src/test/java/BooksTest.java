@@ -1,7 +1,7 @@
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
-import com.thoughtworks.pathashala67.Model.Book;
-import com.thoughtworks.pathashala67.Model.Books;
+import com.thoughtworks.pathashala67.exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.exceptions.InvalidBookException;
+import com.thoughtworks.pathashala67.model.Book;
+import com.thoughtworks.pathashala67.model.Books;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

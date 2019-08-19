@@ -1,15 +1,15 @@
-package com.thoughtworks.pathashala67.Model;
+package com.thoughtworks.pathashala67.model;
 
-import com.thoughtworks.pathashala67.Controller.CommonController;
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.controller.Controller;
+import com.thoughtworks.pathashala67.exceptions.BookNotAvailableException;
 
 // Represents taking
-public class Checkout implements Action {
+class CheckoutAction implements Action {
 
     private Books books;
-    private CommonController controller = new CommonController();
+    private Controller controller = new Controller();
 
-    Checkout( Books books ) {
+    CheckoutAction( Books books ) {
         this.books = books;
     }
 

@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67.Model;
+package com.thoughtworks.pathashala67.model;
 
 import java.util.ArrayList;
 import java.util.List;

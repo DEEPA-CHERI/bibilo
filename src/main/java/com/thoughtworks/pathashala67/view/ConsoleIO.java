@@ -1,4 +1,4 @@
-package com.thoughtworks.pathashala67.View;
+package com.thoughtworks.pathashala67.view;
 
 import java.util.Scanner;
 

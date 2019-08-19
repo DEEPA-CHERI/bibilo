@@ -1,7 +1,7 @@
-package com.thoughtworks.pathashala67.Model;
+package com.thoughtworks.pathashala67.model;
 
-import com.thoughtworks.pathashala67.Exceptions.BookNotAvailableException;
-import com.thoughtworks.pathashala67.Exceptions.InvalidBookException;
+import com.thoughtworks.pathashala67.exceptions.BookNotAvailableException;
+import com.thoughtworks.pathashala67.exceptions.InvalidBookException;
 
 import java.util.ArrayList;
 import java.util.List;
