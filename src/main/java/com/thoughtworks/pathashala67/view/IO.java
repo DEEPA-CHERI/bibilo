@@ -4,5 +4,5 @@ public interface IO {
     public void printToConsole( String message );
     public void printBookList( String bookList );
     public String getInput();
-    public String getBookName() ;
+    public String getName() ;
 }

@@ -1,7 +1,6 @@
 package com.thoughtworks.pathashala67.model;
 
 import com.thoughtworks.pathashala67.controller.Controller;
-import com.thoughtworks.pathashala67.view.ConsoleIO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,21 +8,19 @@ import java.util.List;
 //Models to perform various activities
 public class ActionPerformer {
     private List<Action> actions = new ArrayList<>();
-    private Books books;
-    private Movies movies;
     private Controller controller = new Controller();
 
 
-    public ActionPerformer( Books books,Movies movies ) {
-        actions.add( new DisplayAction( books ) );
-        actions.add( new CheckoutAction( books) );
-        actions.add( new GiveBackAction( books) );
-        actions.add(new DisplayAction( movies ));
-        this.books = books;
-
+    public ActionPerformer( Books books, Movies movies ) {
+        actions.add( new DisplayAction<>( books ) );
+        actions.add( new CheckoutAction<>( books ) );
+        actions.add( new GiveBackAction<>( books ) );
+        actions.add( new DisplayAction<>( movies ) );
+        actions.add( new CheckoutAction<>( movies ));
+        actions.add(new GiveBackAction<>(movies ));
     }
 
-    public void perform( String choice )  {
+    public void perform( String choice ) {
         String errorMessage = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";

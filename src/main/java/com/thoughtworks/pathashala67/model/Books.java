@@ -2,13 +2,14 @@ package com.thoughtworks.pathashala67.model;
 
 import com.thoughtworks.pathashala67.exceptions.BookNotAvailableException;
 import com.thoughtworks.pathashala67.exceptions.InvalidBookException;
+import com.thoughtworks.pathashala67.exceptions.InvalidException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Books {
     private List<Book> books;
-    private List<Book> checkedOutBooks = new ArrayList<>();
+    private CheckedOutLibraryItem checkedOutLibraryItem = new CheckedOutLibraryItem();
 
     public Books( List<Book> books ) {
         this.books = books;
@@ -28,13 +29,13 @@ public class Books {
     }
 
     public String checkout( String bookName ) throws BookNotAvailableException {
-        Book book = searchForBook( bookName, books );
-        checkedOutBooks.add( book );
+        Book book = searchForBook( bookName);
+        checkedOutLibraryItem.add( book );
         books.remove( book );
         return ("Thank you! Enjoy the book");
     }
 
-    public Book searchForBook( String bookName, List<Book> books ) throws BookNotAvailableException {
+    public Book searchForBook( String bookName) throws BookNotAvailableException {
         for (Book book : books) {
             if (book.equals( new Book( bookName ) )) {
                 return book;
@@ -44,14 +45,14 @@ public class Books {
     }
 
     public String returnBook( String bookName ) throws InvalidBookException {
-        Book book;
+        Book book = new Book( bookName );
         try {
-            book = searchForBook( bookName, checkedOutBooks );
-        } catch (BookNotAvailableException exception) {
+            book = (Book) checkedOutLibraryItem.search( book );
+        } catch ( InvalidException exception) {
             throw new InvalidBookException( "That is not a valid book to return." );
         }
         books.add( book );
-        checkedOutBooks.remove( book );
+        checkedOutLibraryItem.remove( book );
         return ("Thank you for returning the book");
     }
 

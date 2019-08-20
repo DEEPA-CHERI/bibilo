@@ -6,8 +6,8 @@ import com.thoughtworks.pathashala67.view.ConsoleIO;
 public class Controller implements IO {
     private ConsoleIO consoleIo = new ConsoleIO();
 
-    public String getBookName() {
-        return consoleIo.getBookName();
+    public String getName() {
+        return consoleIo.getName();
     }
 
     @Override

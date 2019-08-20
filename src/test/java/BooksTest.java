@@ -29,7 +29,7 @@ class BooksTest {
 
     @Test
     void expectBookIndexWhenBookIsInLibrary() throws BookNotAvailableException {
-        Book book = books.searchForBook( "Programming Pearls", bookList );
+        Book book = books.searchForBook( "Programming Pearls" );
 
         assertEquals( bookList.get( 3 ), book );
     }

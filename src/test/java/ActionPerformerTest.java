@@ -40,11 +40,11 @@ class ActionPerformerTest {
         books = new Books( bookList );
 
         ArrayList<Movie> moviesList = new ArrayList<Movie>();
-        moviesList.add( new Movie( "Ninnu choodalani", 2001, "V.R.Prathap", "8" ) );
-        moviesList.add( new Movie( "Student No 1", 2001, "S.S Rajamouli", "unrated" ) );
-        moviesList.add( new Movie( "Aadi", 2002, "V.V Vinayak", "9" ) );
-        moviesList.add( new Movie( "Simhadri", 2003, "S.S Rajamouli", "7" ) );
-        moviesList.add( new Movie( "NaraSimhudu", 2005, "B.Gopal", "9" ) );
+        moviesList.add( new Movie( "Ninnu choodalani" ) );
+        moviesList.add( new Movie( "Student No 1" ) );
+        moviesList.add( new Movie( "Aadi" ) );
+        moviesList.add( new Movie( "Simhadri" ) );
+        moviesList.add( new Movie( "NaraSimhudu" ) );
         movies = new Movies( moviesList );
     }
 

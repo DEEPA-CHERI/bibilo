@@ -46,6 +46,8 @@ public class Bibiloteca {
                 "2 - Checkout Book\n" +
                 "3 - Return Book\n" +
                 "4 - List of Movies\n" +
+                "5 - Checkout Movie\n" +
+                "6 - Return Movie\n" +
                 "q - Quit the application\n";
 
         consoleIo.printToConsole( menu );

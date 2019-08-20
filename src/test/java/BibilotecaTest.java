@@ -33,10 +33,12 @@ class BibilotecaTest {
         String expectedMenu = "=========================\n"
                 + "           Menu           \n" +
                 "=========================\n" +
-                "1. List of Books\n" +
+                "1 - List of Books\n" +
                 "2 - Checkout Book\n" +
                 "3 - Return Book\n" +
-                "q. Quit the application\n";
+                "4 - List of Movies\n" +
+                "5 - Return Movie\n" +
+                "q - Quit the application\n";
 
         bibiloteca.viewMenuOptions();
 

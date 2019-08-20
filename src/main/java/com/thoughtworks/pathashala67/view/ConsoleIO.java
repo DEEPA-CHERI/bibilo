@@ -20,7 +20,7 @@ public class ConsoleIO implements IO {
         System.out.println(bookList);
     }
 
-    public String getBookName() {
+    public String getName() {
         return scanner.nextLine();
     }
 
