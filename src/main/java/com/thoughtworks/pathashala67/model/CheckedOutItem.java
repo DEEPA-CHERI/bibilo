@@ -5,7 +5,7 @@ import com.thoughtworks.pathashala67.exceptions.InvalidException;
 import java.util.ArrayList;
 import java.util.List;
 
-class CheckedOutLibraryItem<T> {
+class CheckedOutItem<T> {
 
     List<T> items = new ArrayList<T>();
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Books {
     private List<Book> books;
-    private CheckedOutLibraryItem<Book> checkedOutLibraryItem = new CheckedOutLibraryItem<>();
+    private CheckedOutItem<Book> checkedOutLibraryItem = new CheckedOutItem<>();
 
     public Books( List<Book> books ) {
         this.books = books;

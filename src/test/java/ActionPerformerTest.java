@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.containsString;
 class ActionPerformerTest {
 
     private Books books;
-    Movies movies;
+    private Movies movies;
 
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -39,7 +39,7 @@ class ActionPerformerTest {
                 new Book( "Programming Pearls", "Jon L. Bentley", 1915 ) ) );
         books = new Books( bookList );
 
-        ArrayList<Movie> moviesList = new ArrayList<Movie>();
+        ArrayList<Movie> moviesList = new ArrayList<>();
         moviesList.add( new Movie( "Ninnu choodalani" ) );
         moviesList.add( new Movie( "Student No 1" ) );
         moviesList.add( new Movie( "Aadi" ) );
@@ -50,7 +50,7 @@ class ActionPerformerTest {
 
     @Test
     void expectToDisplayInvalidMessageWhenInvalidOptionChosen() {
-        ActionPerformer actionPerformer = new ActionPerformer( books ,movies);
+        ActionPerformer actionPerformer = new ActionPerformer( books, movies );
         String expected = "=====================\n" +
                 "Select a valid option!\n" +
                 "=====================";

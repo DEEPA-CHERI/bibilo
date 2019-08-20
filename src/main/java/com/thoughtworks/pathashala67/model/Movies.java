@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Movies {
     private List<Movie> movies;
-    private CheckedOutLibraryItem<Movie> checkedOutLibraryItem = new CheckedOutLibraryItem<>();
+    private CheckedOutItem<Movie> checkedOutLibraryItem = new CheckedOutItem<>();
 
     public Movies( ArrayList<Movie> movies ) {
         this.movies = movies;
