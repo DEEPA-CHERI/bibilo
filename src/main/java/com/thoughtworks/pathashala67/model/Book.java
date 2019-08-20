@@ -19,7 +19,7 @@ public class Book {
     }
 
     String printDetails( int index ) {
-        return (String.format( "|%-5s| %-50s| %-25s| %-15s|%n", index+1, name, author, publishedYear ));
+        return (String.format( "|%-5s| %-50s| %-25s| %-15s|%n", index + 1, name, author, publishedYear ));
     }
 
     @Override

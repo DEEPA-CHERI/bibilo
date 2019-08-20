@@ -2,6 +2,7 @@ package com.thoughtworks.pathashala67.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
 //Load books and movies to the Library
 public class Intializer {
     public static Books loadBooks() {
@@ -26,18 +27,18 @@ public class Intializer {
 
     public static Movies loadMovies() {
         return new Movies( new ArrayList<Movie>() {{
-            add(new Movie("Ninnu choodalani",2001,"V.R.Prathap","8"));
-            add(new Movie("Student No 1",2001,"S.S Rajamouli","9"));
-            add(new Movie("Aadi",2002,"V.V Vinayak","unrated"));
-            add(new Movie("Simhadri",2003,"S.S Rajamouli","7"));
-            add(new Movie("NaraSimhudu",2005,"B.Gopal","8"));
-            add(new Movie("Rakhi",2006,"KrishnaVamsi","9"));
-            add(new Movie("YamaDonga",2007,"S.S Rajamouli","7"));
-            add(new Movie("Oosarvelli",2011,"Surender Reddy","unrated"));
-            add(new Movie("Temper",2015,"Puri Jagannadh","7"));
-            add(new Movie("Nannaku Prematho",2016,"Sukumar","8"));
-            add(new Movie("Janatha Garage",2016,"Koratala Siva","5"));
-            add(new Movie("Aravinda Sametha Veera Raghava",2018,"Trivikram Srinivas","9"));
+            add( new Movie( "Ninnu choodalani", 2001, "V.R.Prathap", "8" ) );
+            add( new Movie( "Student No 1", 2001, "S.S Rajamouli", "9" ) );
+            add( new Movie( "Aadi", 2002, "V.V Vinayak", "unrated" ) );
+            add( new Movie( "Simhadri", 2003, "S.S Rajamouli", "7" ) );
+            add( new Movie( "NaraSimhudu", 2005, "B.Gopal", "8" ) );
+            add( new Movie( "Rakhi", 2006, "KrishnaVamsi", "9" ) );
+            add( new Movie( "YamaDonga", 2007, "S.S Rajamouli", "7" ) );
+            add( new Movie( "Oosarvelli", 2011, "Surender Reddy", "unrated" ) );
+            add( new Movie( "Temper", 2015, "Puri Jagannadh", "7" ) );
+            add( new Movie( "Nannaku Prematho", 2016, "Sukumar", "8" ) );
+            add( new Movie( "Janatha Garage", 2016, "Koratala Siva", "5" ) );
+            add( new Movie( "Aravinda Sametha Veera Raghava", 2018, "Trivikram Srinivas", "9" ) );
         }} );
     }
 }

@@ -17,7 +17,7 @@ public class ConsoleIO implements IO {
 
     public void printBookList( String bookList ) {
 
-        System.out.println(bookList);
+        System.out.println( bookList );
     }
 
     public String getName() {

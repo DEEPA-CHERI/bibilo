@@ -9,9 +9,9 @@ public class Movie {
     private String rating;
 
     public Movie( String name, int year, String director, String rating ) {
-        this.name =name;
+        this.name = name;
         this.year = year;
-        this.director=director;
+        this.director = director;
         this.rating = rating;
     }
 

@@ -16,8 +16,8 @@ public class ActionPerformer {
         actions.add( new CheckoutAction<>( books ) );
         actions.add( new GiveBackAction<>( books ) );
         actions.add( new DisplayAction<>( movies ) );
-        actions.add( new CheckoutAction<>( movies ));
-        actions.add(new GiveBackAction<>(movies ));
+        actions.add( new CheckoutAction<>( movies ) );
+        actions.add( new GiveBackAction<>( movies ) );
     }
 
     public void perform( String choice ) {

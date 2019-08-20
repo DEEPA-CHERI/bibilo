@@ -1,4 +1,5 @@
 package com.thoughtworks.pathashala67.model;
+
 import com.thoughtworks.pathashala67.controller.Controller;
 import com.thoughtworks.pathashala67.exceptions.InvalidBookException;
 import com.thoughtworks.pathashala67.exceptions.InvalidMovieException;
@@ -8,7 +9,7 @@ public class GiveBackAction<T> implements Action {
     private T item;
     private Controller controller = new Controller();
 
-    GiveBackAction( T item) {
+    GiveBackAction( T item ) {
         this.item = item;
     }
 
@@ -29,8 +30,8 @@ public class GiveBackAction<T> implements Action {
         String movieName = controller.getName();
         String status;
         try {
-            status =movies.returnMovie( movieName );
-        } catch ( InvalidMovieException exception) {
+            status = movies.returnMovie( movieName );
+        } catch (InvalidMovieException exception) {
             status = exception.getMessage();
         }
         controller.printToConsole( status );
@@ -42,7 +43,7 @@ public class GiveBackAction<T> implements Action {
         String bookName = controller.getName();
         String status;
         try {
-            status =books.returnBook( bookName );
+            status = books.returnBook( bookName );
         } catch (InvalidBookException exception) {
             status = exception.getMessage();
         }

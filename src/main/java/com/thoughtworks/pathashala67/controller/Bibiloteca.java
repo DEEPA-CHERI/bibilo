@@ -53,12 +53,12 @@ public class Bibiloteca {
         consoleIo.printToConsole( menu );
     }
 
-    private void selectMenuOption( String choice ){
+    private void selectMenuOption( String choice ) {
         if (choice.equals( "q" )) {
             application_status = false;
             return;
         }
-        ActionPerformer actionPerformer = new ActionPerformer( books,movies );
+        ActionPerformer actionPerformer = new ActionPerformer( books, movies );
         actionPerformer.perform( choice );
     }
 }
