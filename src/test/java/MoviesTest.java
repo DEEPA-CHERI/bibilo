@@ -57,5 +57,18 @@ class MoviesTest {
         assertEquals( expected, actual );
     }
 
+    @Test
+    void expectToDisplayMovieDetailsWhenDisplayMethodCalled() {
+        String expected = "********************Movies List********************\n" +
+                "|Id   | Name                          | Year      | Director            | Rating         |\n" +
+                "|1    | Ninnu choodalani              | 2001      | V.R.Prathap         | 8              |\n" +
+                "|2    | Student No 1                  | 2001      | S.S Rajamouli       | 9              |\n" +
+                "|3    | Aadi                          | 2002      | V.V Vinayak         | unrated        |\n" +
+                "|4    | Simhadri                      | 2003      | S.S Rajamouli       | 7              |\n" +
+                "|5    | NaraSimhudu                   | 2005      | B.Gopal             | 8              |\n";
 
+        String movieDetails = movies.displayMovieListDetails();
+
+        assertEquals( expected, movieDetails );
+    }
 }
