@@ -41,6 +41,11 @@ class MoviesTest {
         assertEquals( movie, new Movie( "Aadi" ) );
     }
 
+    @Test
+    void expectExceptionWhenBookIsNotFound() throws MovieNotAvailableException {
+
+        assertThrows( MovieNotAvailableException.class, () -> movies.searchForMovie( "Student No" ) );
+    }
 
     @Test
     void expectUserAbleToReturnAMovie() throws MovieNotAvailableException, InvalidMovieException {
@@ -50,7 +55,6 @@ class MoviesTest {
         String actual = movies.returnMovie( "Student No 1" );
 
         assertEquals( expected, actual );
-
     }
 
 
