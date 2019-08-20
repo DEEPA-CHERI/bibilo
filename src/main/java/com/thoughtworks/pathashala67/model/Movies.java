@@ -13,7 +13,7 @@ public class Movies {
         this.movies = movies;
     }
 
-    String displayMovieListDetails() {
+    public String displayMovieListDetails() {
         StringBuilder movieDetails = new StringBuilder();
         String titleTemplate = "|%-5s| %-30s| %-10s| %-20s| %-15s|%n";
         movieDetails.append( "********************Movies List********************\n" );
@@ -35,7 +35,7 @@ public class Movies {
     }
 
 
-    private Movie searchForMovie( String movieName ) throws MovieNotAvailableException {
+    public Movie searchForMovie( String movieName ) throws MovieNotAvailableException {
         for (Movie movie : movies) {
             if (movie.equals( new Movie( movieName ) )) {
                 return movie;

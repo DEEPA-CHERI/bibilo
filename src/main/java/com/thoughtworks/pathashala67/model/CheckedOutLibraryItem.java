@@ -1,12 +1,11 @@
 package com.thoughtworks.pathashala67.model;
 
 import com.thoughtworks.pathashala67.exceptions.InvalidException;
-import com.thoughtworks.pathashala67.exceptions.InvalidMovieException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckedOutLibraryItem<T> {
+class CheckedOutLibraryItem<T> {
 
     List<T> items = new ArrayList<T>();
 

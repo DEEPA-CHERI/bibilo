@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class MoviesTest {
     private Movies movies;
@@ -25,7 +26,7 @@ class MoviesTest {
     }
 
     @Test
-    void shouldBeAbleToCheckoutMovie() throws MovieNotAvailableException {
+    void expectUserAbleToCheckoutMovie() throws MovieNotAvailableException {
         String expected = "Thank you! Enjoy the Movie";
 
         String actual = movies.checkout( "Student No 1" );
@@ -34,7 +35,15 @@ class MoviesTest {
     }
 
     @Test
-    void shouldBeAbleToReturnAMovie() throws MovieNotAvailableException, InvalidMovieException {
+    void expectBookWhenBookIsFound() throws MovieNotAvailableException {
+        Movie movie = movies.searchForMovie( "Aadi" );
+
+        assertEquals( movie, new Movie( "Aadi" ) );
+    }
+
+
+    @Test
+    void expectUserAbleToReturnAMovie() throws MovieNotAvailableException, InvalidMovieException {
         movies.checkout( "Student No 1" );
         String expected = "Thank you for returning the movie";
 
